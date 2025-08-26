@@ -2,37 +2,50 @@
 <urlset
    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Canonical homepage -->
   <url>
     <loc>https://oluwatossin.github.io/</loc>
-    <lastmod>2025-07-02</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <priority>1.00</priority>
   </url>
-  <url>
-    <loc>https://oluwatossin.github.io/index.html</loc>
-    <lastmod>2025-07-02</lastmod>
-    <priority>0.95</priority>
-  </url>
+
   <url>
     <loc>https://oluwatossin.github.io/about.html</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <priority>0.80</priority>
   </url>
+
   <url>
     <loc>https://oluwatossin.github.io/experience.html</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <priority>0.80</priority>
   </url>
+
   <url>
     <loc>https://oluwatossin.github.io/portfolio.html</loc>
-    <lastmod>2025-07-02</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <priority>0.85</priority>
   </url>
+
+  <!-- New location pages -->
+  <url>
+    <loc>https://oluwatossin.github.io/devops-engineer-london.html</loc>
+    <lastmod>2025-08-26</lastmod>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://oluwatossin.github.io/devops-engineer-manchester.html</loc>
+    <lastmod>2025-08-26</lastmod>
+    <priority>0.82</priority>
+  </url>
+
   <url>
     <loc>https://oluwatossin.github.io/resume.pdf</loc>
-    <lastmod>2025-04-13</lastmod>
+    <lastmod>2025-08-26</lastmod>
     <priority>0.70</priority>
   </url>
+
 </urlset>
