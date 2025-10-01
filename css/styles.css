@@ -1516,6 +1516,32 @@ body{
 
 /* ==== BLOG ARTICLE STYLES ==== */
 
+/* Article page header with teal background - specific to article pages */
+.article-header {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+  color: white !important;
+  padding: 48px 32px !important;
+  border-radius: 20px !important;
+  border: none !important;
+  margin-bottom: 48px !important;
+}
+
+.article-title {
+  color: white !important;
+}
+
+.article-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.article-meta {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.article-meta span {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 /* Article card types */
 .article-card {
   cursor: pointer;
