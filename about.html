@@ -1,165 +1,242 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Essentials -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — DevOps Engineer UK | Oluwatosin Jegede | AWS, Kubernetes, Terraform</title>
+  <meta name="description" content="About Oluwatosin Jegede — Experienced DevOps Engineer in UK with 4+ years building secure, scalable platforms on AWS/GCP. Kubernetes, Terraform, CI/CD & GitOps expertise. Available for roles across UK." />
 
-  <title>About Oluwatosin Jegede – DevOps & Security Engineer (AWS, Kubernetes, Terraform)</title>
-
-  <!-- CSS & Fonts -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- SEO -->
-  <meta name="description" content="About Oluwatosin Jegede, UK-based DevOps & Security Engineer specialising in AWS (EKS), Kubernetes, Terraform, CI/CD & GitOps, and MLOps (SageMaker). Serving London, Manchester and remote." />
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <!-- Canonical -->
   <link rel="canonical" href="https://oluwatossin.github.io/about.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="About Oluwatosin Jegede – DevOps & Security Engineer" />
-  <meta property="og:description" content="AWS DevOps/DevSecOps: EKS, Terraform, CI/CD & GitOps, SageMaker. UK-based; serving London, Manchester & remote." />
-  <meta property="og:image" content="https://oluwatossin.github.io/images/meta-preview.jpg" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="About — DevOps Engineer UK | Oluwatosin Jegede" />
+  <meta property="og:description" content="Experienced DevOps Engineer in UK: AWS/GCP, Kubernetes, Terraform, CI/CD & GitOps. 4+ years building secure, scalable platforms with 99.99% uptime." />
+  <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://oluwatossin.github.io/about.html" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:locale:alternate" content="en_US" />
-
-  <!-- Twitter -->
+  <meta property="og:image" content="https://oluwatossin.github.io/images/profile.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Oluwatosin Jegede – DevOps & Security Engineer" />
-  <meta name="twitter:description" content="AWS DevOps/DevSecOps: EKS, Terraform, CI/CD & GitOps, SageMaker. UK-based; serving London, Manchester & remote." />
-  <meta name="twitter:image" content="https://oluwatossin.github.io/images/meta-preview.jpg" />
+  <meta name="twitter:title" content="About — DevOps Engineer UK | Oluwatosin Jegede" />
+  <meta name="twitter:description" content="Experienced DevOps Engineer in UK: AWS/GCP, Kubernetes, Terraform, CI/CD & GitOps. 4+ years, 99.99% uptime." />
+  <meta name="twitter:image" content="https://oluwatossin.github.io/images/profile.jpg" />
 
-  <!-- JSON-LD: About Page with Person as mainEntity -->
+  <!-- Additional SEO for UK DevOps roles -->
+  <meta name="keywords" content="About DevOps Engineer UK, AWS DevOps Professional, Kubernetes Engineer Background, Terraform Specialist, Cloud Engineer Experience, Platform Engineer Profile, DevSecOps UK, Site Reliability Engineer SRE" />
+  <meta name="geo.region" content="GB" />
+  <meta name="geo.placename" content="United Kingdom" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Schema.org (JSON-LD) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About – Oluwatosin Jegede",
-    "url": "https://oluwatossin.github.io/about.html",
-    "inLanguage": "en-GB",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Oluwatosin Jegede",
-      "jobTitle": "DevOps & Security Engineer",
-      "image": "https://oluwatossin.github.io/images/meta-preview.jpg",
-      "url": "https://oluwatossin.github.io/",
-      "sameAs": [
-        "https://github.com/oluwatossin",
-        "https://www.linkedin.com/in/oluwatosinjegede/",
-        "https://twitter.com/thozyne"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Chester",
-        "addressCountry": "United Kingdom"
-      }
-    }
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Oluwatosin Jegede",
+    "url":"https://oluwatossin.github.io/about.html",
+    "image":"https://oluwatossin.github.io/images/profile.jpg",
+    "jobTitle":"DevOps Engineer",
+    "description":"Experienced DevOps Engineer with 4+ years building secure, scalable platforms on AWS and GCP",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Sovereign Technology & Innovation Ltd"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chester",
+      "addressRegion": "England", 
+      "addressCountry": "GB"
+    },
+    "knowsAbout":["AWS","GCP","Kubernetes","Terraform","GitHub Actions","Argo CD","Prometheus","Grafana","SageMaker","DevSecOps","PCI-DSS","GDPR","Site Reliability Engineering","Infrastructure as Code","CI/CD","GitOps"],
+    "sameAs":["https://www.linkedin.com/in/oluwatosinjegede/","https://github.com/OluwaTossin","https://twitter.com/thozyne"]
   }
   </script>
-
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="RLBJUCRn1RX0sN9rX2QmZjt9VCiE3qaX86yPIUkBqFU" />
 </head>
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i>Home</a></li>
-        <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i>About</a></li>
-        <li><a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i>Experience</a></li>
-        <li><a href="portfolio.html" class="nav-link"><i class="fas fa-th"></i>Portfolio</a></li>
-      </ul>
-    </nav>
+    <div class="container nav">
+      <div class="brand" aria-label="Site brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Oluwatosin&nbsp;Jegede</span>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="mailto:careers.tosinjegede@gmail.com" class="pill"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="portfolio animate-fade-in">
-      <h1 class="section-title">About Me</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="about-hero">
+          <div class="about-image">
+            <img src="images/profile.jpg" alt="Oluwatosin Jegede - DevOps Engineer" class="profile-image-large" />
+          </div>
+          <div class="about-content">
+            <h1>About Me</h1>
+            <p class="sub">
+              <strong>Cloud & Security Engineer | DevOps & MLOps Specialist | Problem Solver with a Systems Mindset</strong>
+            </p>
+            <p>
+              My journey into cloud engineering began with a simple question: <em>How can we build systems that not only run, but scale securely and adapt under pressure?</em>
+            </p>
+            <p>
+              Since then, I've spent the last few years helping startups, nonprofits, and tech companies answer that question by designing resilient infrastructures across AWS, GCP, and hybrid environments. I've delivered multi-region architectures, automated CI/CD pipelines, and secure ML platforms, achieving outcomes like 30% cost savings, 50% faster deployments, 70% audit-effort reduction, and 99.99% uptime.
+            </p>
+            <div class="about-pills">
+              <span class="pill"><i class="fa-solid fa-location-dot"></i> Based in Chester, UK • Available for roles in London, Manchester, Birmingham, Leeds and UK at large</span>
+              <a class="pill" href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a class="pill" href="mailto:careers.tosinjegede@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<p><strong>Cloud & Security Engineer | DevOps & MLOps Specialist | Problem Solver with a Systems Mindset</strong></p>
+    <!-- Tools & Skills -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-tools"></i> The Tools I Use to Solve Problems</h2>
+        </div>
+        <div class="competencies-list">
+          <div class="competency-item"><i class="fa-solid fa-code-branch"></i><div><strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</div></div>
+          <div class="competency-item"><i class="fa-solid fa-rocket"></i><div><strong>CI/CD Automation:</strong> GitHub Actions, Jenkins, AWS CodePipeline</div></div>
+          <div class="competency-item"><i class="fa-solid fa-gauge-high"></i><div><strong>Observability:</strong> Prometheus, Grafana, CloudWatch (logs, metrics, alerts)</div></div>
+          <div class="competency-item"><i class="fa-solid fa-shield-halved"></i><div><strong>Security & Compliance:</strong> IAM (least privilege), KMS, AWS WAF, AWS Config, GuardDuty, Security Hub, SCPs / Access Analyzer</div></div>
+          <div class="competency-item"><i class="fa-solid fa-shield-alt"></i><div><strong>DevSecOps Tooling:</strong> Policy-as-Code (OPA, Checkov), SAST/SCA (CodeQL, Trivy, Snyk), Secrets Mgmt (SSM, Secrets Manager), XDR/SIEM (Sophos XDR/MDR)</div></div>
+          <div class="competency-item"><i class="fa-solid fa-robot"></i><div><strong>MLOps Delivery:</strong> SageMaker, Step Functions, Lambda, Bedrock (secure endpoints, encrypted artifacts)</div></div>
+        </div>
+      </div>
+    </section>
 
-<p>My journey into cloud engineering began with a simple question: <em>How can we build systems that not only run, but scale securely and adapt under pressure?</em></p>
+    <!-- Achievements -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-award"></i> A Few Wins I'm Proud Of</h2>
+        </div>
+        <div class="competencies-list">
+          <div class="competency-item"><i class="fas fa-check-circle"></i><div>Reduced cloud spend by 30% through rightsizing and automation.</div></div>
+          <div class="competency-item"><i class="fas fa-rocket"></i><div>Enabled zero-downtime releases for a fintech platform by restructuring CI/CD pipelines.</div></div>
+          <div class="competency-item"><i class="fas fa-bullseye"></i><div>Cut incident detection time by 40–55% through unified observability and alerts.</div></div>
+          <div class="competency-item"><i class="fas fa-cloud-upload-alt"></i><div>Migrated legacy systems into AWS/GCP with uptime and compliance maintained.</div></div>
+          <div class="competency-item"><i class="fas fa-microchip"></i><div>Delivered secure ML endpoints with IAM-based access and encrypted policies.</div></div>
+        </div>
+      </div>
+    </section>
 
-<p>Since then, I’ve spent the last few years helping startups, nonprofits, and tech companies answer that question by designing resilient infrastructures across AWS, GCP, and hybrid environments. I’ve delivered multi-region architectures, automated CI/CD pipelines, and secure ML platforms, achieving outcomes like 30% cost savings, 50% faster deployments, 70% audit-effort reduction, and 99.99% uptime.</p>
+    <!-- Philosophy -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-seedling"></i> What Drives Me</h2>
+        </div>
+        <p>
+          I believe infrastructure should be secure-by-design, invisible until needed, and able to heal, scale, and defend itself. That's the mindset I bring to every architecture and every team I support.
+        </p>
+      </div>
+    </section>
 
-<hr class="fancy-line" />
+    <!-- Education & Certifications -->
+    <section>
+      <div class="container grid grid-education-interests">
+        <div class="panel">
+          <div class="section-title"><h2><i class="fas fa-user-graduate"></i> Education</h2></div>
+          <p>
+            MSc in Animal Biotechnology, Federal University of Agriculture, Abeokuta · BTech in Animal Production & Health, Federal University of Technology, Akure · Diploma in Computer Engineering, Datashield Computer Institute
+          </p>
+        </div>
 
-<h2><i class="fas fa-tools"></i> The Tools I Use to Solve Problems</h2>
-<ul class="services">
-  <li><i class="fas fa-code-branch"></i> <strong>Infrastructure as Code:</strong> Terraform, CloudFormation, Ansible</li>
-  <li><i class="fas fa-sync-alt"></i> <strong>CI/CD Automation:</strong> GitHub Actions, Jenkins, AWS CodePipeline</li>
-  <li><i class="fas fa-chart-line"></i> <strong>Observability:</strong> Prometheus, Grafana, CloudWatch (logs, metrics, alerts)</li>
-  <li><i class="fas fa-lock"></i> <strong>Security & Compliance:</strong> IAM (least privilege), KMS, AWS WAF, AWS Config, GuardDuty, Security Hub, SCPs / Access Analyzer</li>
-  <li><i class="fas fa-shield-alt"></i> <strong>DevSecOps Tooling:</strong> Policy-as-Code (OPA, Checkov), SAST/SCA (CodeQL, Trivy, Snyk), Secrets Mgmt (SSM, Secrets Manager), XDR/SIEM (Sophos XDR/MDR)</li>
-  <li><i class="fas fa-brain"></i> <strong>MLOps Delivery:</strong> SageMaker, Step Functions, Lambda, Bedrock (secure endpoints, encrypted artifacts)</li>
-</ul>
+        <div class="panel">
+          <div class="section-title"><h2><i class="fas fa-heart"></i> Personal Interests</h2></div>
+          <p>
+            I enjoy exploring AI infrastructure, real-time observability, and the intersections between automation and human systems. I'm drawn to systems thinking, cognitive science, and resilient digital ecosystems that connect people and technology.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<hr class="fancy-line" />
+    <!-- Certifications -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-certificate"></i> Certifications</h2>
+          <span class="small">Recent & relevant</span>
+        </div>
+        <div class="grid grid-certifications">
+          <div class="cert-group">
+            <h3 class="cert-category"><i class="fa-brands fa-aws"></i> AWS Certifications</h3>
+            <div class="cert-list">
+              <div class="cert-item"><strong>AWS Certified DevOps Engineer – Professional</strong></div>
+              <div class="cert-item"><strong>AWS Certified Machine Learning Engineer – Associate</strong></div>
+              <div class="cert-item"><strong>AWS Certified Security – Specialty</strong></div>
+              <div class="cert-item"><strong>AWS Certified Solutions Architect – Associate</strong></div>
+              <div class="cert-item"><strong>AWS Certified Developer – Associate</strong></div>
+            </div>
+          </div>
+          <div class="cert-group">
+            <h3 class="cert-category"><i class="fa-solid fa-cloud"></i> Cloud & Container</h3>
+            <div class="cert-list">
+              <div class="cert-item"><strong>Kubernetes and Cloud Native Associate</strong></div>
+              <div class="cert-item"><strong>Google Associate Cloud Engineer</strong></div>
+              <div class="cert-item"><strong>GitHub Advanced Security</strong></div>
+            </div>
+          </div>
+          <div class="cert-group">
+            <h3 class="cert-category"><i class="fa-solid fa-shield"></i> Security & Network</h3>
+            <div class="cert-list">
+              <div class="cert-item"><strong>Cisco Ethical Hacker</strong></div>
+              <div class="cert-item"><strong>Cisco CyberOps Associate</strong></div>
+              <div class="cert-item"><strong>Cisco Network Technician</strong></div>
+              <div class="cert-item"><strong>Qualys Vulnerability Management Detection and Response Specialist</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2><i class="fas fa-award"></i> A Few Wins I'm Proud Of</h2>
-<ul class="services">
-  <li><i class="fas fa-check-circle"></i> Reduced cloud spend by 30% through rightsizing and automation.</li>
-  <li><i class="fas fa-rocket"></i> Enabled zero-downtime releases for a fintech platform by restructuring CI/CD pipelines.</li>
-  <li><i class="fas fa-bullseye"></i> Cut incident detection time by 40–55% through unified observability and alerts.</li>
-  <li><i class="fas fa-cloud-upload-alt"></i> Migrated legacy systems into AWS/GCP with uptime and compliance maintained.</li>
-  <li><i class="fas fa-microchip"></i> Delivered secure ML endpoints with IAM-based access and encrypted policies.</li>
-</ul>
+    <!-- Contact CTA -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-handshake"></i> Let's Connect</h2>
+        </div>
+        <p>
+          If you're scaling cloud infrastructure, deploying AI securely, or modernizing DevOps pipelines, let's connect. I'm especially excited to work with teams who care about impact, quality, and building secure-by-design systems.
+        </p>
+        <div class="cta" style="justify-content: center; margin-top: 24px;">
+          <a class="btn primary" href="mailto:careers.tosinjegede@gmail.com?subject=DevOps%2FSRE%2FPlatform%20Engineering%20Opportunity"><i class="fa-solid fa-paper-plane"></i> Email Me</a>
+          <a class="btn" href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a class="btn" href="experience.html"><i class="fa-solid fa-briefcase"></i> View Experience</a>
+        </div>
+      </div>
+    </section>
+    </main>
 
-<hr class="fancy-line" />
-
-<h2><i class="fas fa-seedling"></i> What Drives Me</h2>
-<p>I believe infrastructure should be secure-by-design, invisible until needed, and able to heal, scale, and defend itself. That’s the mindset I bring to every architecture and every team I support.</p>
-
-<hr class="fancy-line" />
-
-<h2><i class="fas fa-user-graduate"></i> Education</h2>
-<p>MSc in Animal Biotechnology, Federal University of Agriculture, Abeokuta · BTech in Animal Production & Health, Federal University of Technology, Akure · Diploma in Computer Engineering, Datashield Computer Institute</p>
-
-<hr class="fancy-line" />
-
-<h2><i class="fas fa-certificate"></i> Certifications</h2>
-<ul class="services">
-  <li><i class="fab fa-aws"></i> AWS Certified DevOps Engineer – Professional</li>
-  <li><i class="fab fa-aws"></i> AWS Certified Machine Learning Engineer – Associate</li>
-  <li><i class="fab fa-aws"></i> AWS Certified Security – Specialty</li>
-  <li><i class="fab fa-aws"></i> AWS Certified Solutions Architect – Associate</li>
-  <li><i class="fab fa-aws"></i> AWS Certified Developer – Associate</li>
-  <li><i class="fas fa-cubes"></i> Kubernetes and Cloud Native Associate</li>
-  <li><i class="fab fa-google"></i> Google Associate Cloud Engineer</li>
-  <li><i class="fab fa-github"></i> GitHub Advanced Security</li>
-  <li><i class="fas fa-user-secret"></i> Cisco Ethical Hacker</li>
-  <li><i class="fas fa-user-shield"></i> Cisco CyberOps Associate</li>
-  <li><i class="fas fa-network-wired"></i> Cisco Network Technician</li>
-  <li><i class="fas fa-shield-virus"></i> Qualys Vulnerability Management Detection and Response Specialist</li>
-</ul>
-
-<hr class="fancy-line" />
-
-<h2><i class="fas fa-heart"></i> Personal Interests</h2>
-<p>I enjoy exploring AI infrastructure, real-time observability, and the intersections between automation and human systems. I’m drawn to systems thinking, cognitive science, and resilient digital ecosystems that connect people and technology.</p>
-
-<hr class="fancy-line" />
-
-<h2><i class="fas fa-handshake"></i> Let’s Connect</h2>
-<p>If you're scaling cloud infrastructure, deploying AI securely, or modernizing DevOps pipelines, let’s connect. I’m especially excited to work with teams who care about impact, quality, and building secure-by-design systems.</p>
-
-<p>You can <a href="mailto:careers.tosinjegede@gmail.com">email me</a> or connect via <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank">LinkedIn</a>.</p>
-
-
-  </main>
-
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/devops-engineer-london.html">DevOps Engineer in London</a>
-      <a href="/devops-engineer-manchester.html">AWS DevOps Engineer in Manchester</a>
-    </nav>
-    <p>Serving London • Manchester • UK-wide • Remote</p>
-    <p>&copy; 2025 Oluwatosin Jegede. All rights reserved.</p>
+  <footer>
+    <div class="container small">
+      © 2025 Oluwatosin Jegede. Professional portfolio. 
+      <span aria-hidden="true">·</span> <a href="about.html">About</a>
+      <span aria-hidden="true">·</span> <a href="portfolio.html">Portfolio</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-london.html">DevOps Engineer in London</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-manchester.html">AWS DevOps Engineer in Manchester</a>
+    </div>
   </footer>
-
 
   <script src="js/scripts.js"></script>
 

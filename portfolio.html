@@ -1,459 +1,910 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Essentials -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — DevOps Engineer UK | Oluwatosin Jegede | AWS, Kubernetes, Terraform</title>
+  <meta name="description" content="Portfolio of Oluwatosin Jegede — secure, scalable cloud platforms on AWS/GCP: Kubernetes, Terraform, CI/CD & GitOps, Observability, DevSecOps, and MLOps case studies." />
 
-  <title>Portfolio – Senior DevOps & Security Engineer (AWS, Kubernetes, Terraform) | Oluwatosin Jegede</title>
-
-  <!-- Core CSS & Fonts -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- SEO -->
-  <meta name="description" content="Selected projects by Oluwatosin Jegede: FinBankOps (multi-region EKS GitOps), AWS cloud penetration test, secure 3-tier app on Kubernetes, patient ID with Rekognition, and real-time fraud detection (SageMaker). UK-based; serving London, Manchester & remote." />
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <!-- Canonical -->
   <link rel="canonical" href="https://oluwatossin.github.io/portfolio.html" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Portfolio — DevOps Engineer UK | Oluwatosin Jegede" />
+  <meta property="og:description" content="DevOps, Platform, Security & MLOps projects with case studies, architectures, and results from AWS and GCP implementations." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Portfolio – Oluwatosin Jegede" />
-  <meta property="og:description" content="AWS DevOps & DevSecOps projects: EKS GitOps, cloud pen test, secure 3-tier on Kubernetes, patient ID (Rekognition), real-time fraud detection (SageMaker)." />
-  <meta property="og:image" content="https://oluwatossin.github.io/images/meta-preview.jpg" />
   <meta property="og:url" content="https://oluwatossin.github.io/portfolio.html" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:locale:alternate" content="en_US" />
-
-  <!-- Twitter -->
+  <meta property="og:image" content="https://oluwatossin.github.io/images/profile.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Portfolio – Oluwatosin Jegede" />
-  <meta name="twitter:description" content="AWS DevOps & DevSecOps projects: EKS GitOps, cloud pen test, secure 3-tier on Kubernetes, patient ID (Rekognition), real-time fraud detection (SageMaker)." />
-  <meta name="twitter:image" content="https://oluwatossin.github.io/images/meta-preview.jpg" />
+  <meta name="twitter:title" content="Portfolio — DevOps Engineer UK | Oluwatosin Jegede" />
+  <meta name="twitter:description" content="DevOps, Platform, Security & MLOps projects with case studies, architectures, and results." />
+  <meta name="twitter:image" content="https://oluwatossin.github.io/images/profile.jpg" />
 
-  <!-- JSON-LD: Collection of high-value projects with your exact links -->
+  <!-- Additional SEO for UK DevOps roles -->
+  <meta name="keywords" content="DevOps Portfolio UK, AWS Projects, Kubernetes Case Studies, Terraform Infrastructure, Platform Engineering Projects, DevSecOps UK, MLOps Portfolio, Site Reliability Engineering SRE" />
+  <meta name="geo.region" content="GB" />
+  <meta name="geo.placename" content="United Kingdom" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Portfolio-specific styles -->
+  <style>
+    /* Filter bar */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .filters input[type="search"] {
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      min-width: 280px;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .filters input[type="search"]:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-color: var(--accent);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .filters input[type="search"]::placeholder {
+      color: var(--muted);
+      opacity: 0.8;
+    }
+
+    .chip {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: var(--card) !important;
+      border: 2px solid var(--accent) !important;
+      color: var(--accent) !important;
+      padding: 8px 12px !important;
+      border-radius: 12px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      box-shadow: var(--shadow);
+    }
+
+    .chip[aria-pressed="true"] {
+      background: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: var(--card) !important;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .chip:hover {
+      background: var(--card-hover) !important;
+      border-color: var(--border-hover) !important;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Grid & cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .filters {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .filters input[type="search"] {
+        min-width: 100%;
+      }
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 280px;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-meta {
+      color: var(--accent) !important;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text) !important;
+    }
+
+    .project-description {
+      color: var(--text) !important;
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent) !important;
+    }
+
+    .anchor-offset {
+      scroll-margin-top: 100px;
+    }
+
+    .highlight-card {
+      animation: highlight 1.6s ease-out;
+    }
+
+    @keyframes highlight {
+      0% { box-shadow: 0 0 0 3px var(--accent); }
+      100% { box-shadow: var(--shadow); }
+    }
+
+    .filter-count {
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Portfolio – Oluwatosin Jegede",
-    "url": "https://oluwatossin.github.io/portfolio.html",
-    "inLanguage": "en-GB",
-    "about": {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Portfolio — Oluwatosin Jegede",
+    "description":"DevOps, Platform, Security and MLOps case studies and project implementations",
+    "url":"https://oluwatossin.github.io/portfolio.html",
+    "author": {
       "@type": "Person",
       "name": "Oluwatosin Jegede",
-      "jobTitle": "Senior DevOps & Security Engineer",
-      "url": "https://oluwatossin.github.io/",
-      "sameAs": [
-        "https://github.com/oluwatossin",
-        "https://www.linkedin.com/in/oluwatosinjegede/",
-        "https://twitter.com/thozyne"
-      ]
-    },
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "FinBankOps: Secure, Multi-Region Kubernetes Infrastructure for Fintech on AWS",
-            "url": "https://github.com/Tosin-STIL/eks-microservice-demo",
-            "sameAs": [
-              "https://www.linkedin.com/pulse/finbankops-secure-multi-region-kubernetes-fintech-aws-jegede-ykiaf/"
-            ]
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "AWS Cloud Penetration Test: Real-World Risk Assessment on Production-Grade Infrastructure",
-            "url": "https://www.linkedin.com/pulse/aws-cloud-penetration-test-real-world-risk-assessment-jegede-xfeof/",
-            "sameAs": [
-              "https://docs.google.com/document/d/1bwHlB1OaBvDBttafjN9OIUwObE7sIAQEc0gtPaFGPnU/edit?usp=sharing"
-            ]
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Secure Three-Tier Web Application Deployment on Kubernetes with AWS Monitoring",
-            "url": "https://github.com/OluwaTossin/Three-tier-Application-Deployment-",
-            "sameAs": [
-              "https://www.linkedin.com/pulse/secure-three-tier-web-application-deployment-aws-oluwatosin-jegede-7fdif/"
-            ]
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "AI in Healthcare: Patient Identity Verification with Rekognition and DynamoDB",
-            "url": "https://github.com/OluwaTossin/rekognition-patient-id",
-            "sameAs": [
-              "https://www.linkedin.com/pulse/ai-healthcare-patient-identity-verification-dynamodb-jegede-sx17f/"
-            ]
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Design, Training, and Deployment of a DevOps-Enabled Real-Time ML Fraud Detection System",
-            "url": "https://github.com/Tosin-STIL/fraud-detection-infra",
-            "sameAs": [
-              "https://github.com/Tosin-STIL/fraud-detection-app",
-              "https://www.linkedin.com/pulse/design-training-deployment-devops-enabled-real-time-ml-jegede-8pu4f/"
-            ]
-          }
-        }
-      ]
+      "jobTitle": "DevOps Engineer"
     }
   }
   </script>
-
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="RLBJUCRn1RX0sN9rX2QmZjt9VCiE3qaX86yPIUkBqFU" />
 </head>
-
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="experience.html" class="nav-link">Experience</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-      </ul>
-    </nav>
+    <div class="container nav">
+      <div class="brand" aria-label="Site brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Oluwatosin&nbsp;Jegede</span>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="mailto:careers.tosinjegede@gmail.com" class="pill"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="portfolio animate-fade-in">
-      <h1 class="section-title">My Projects</h1>
-      <div class="filter-bar">
-        <input type="text" id="project-filter" placeholder="Search by keyword, service, or title..." />
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>My Projects</h1>
       </div>
-      <div class="portfolio-grid" id="project-grid">
-        <div class="project-card animate-slide-in" data-tags="aws security cis prowler iam ssl s3 cloud pentest risk-assessment">
-  <h2>AWS Cloud Penetration Test: Real-World Risk Assessment on Production-Grade Infrastructure</h2>
-  <p>
-    <a href="https://docs.google.com/document/d/1bwHlB1OaBvDBttafjN9OIUwObE7sIAQEc0gtPaFGPnU/edit?usp=sharing" target="_blank"><i class="fas fa-file-alt"></i> Redacted Report</a> |
-    <a href="https://www.linkedin.com/pulse/aws-cloud-penetration-test-real-world-risk-assessment-jegede-xfeof/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Article</a>
-  </p>
-  <p>This penetration test evaluated the security posture of an AWS production-grade system across IAM, S3, TLS configurations, and compliance alignment. Findings included overly permissive IAM policies, public S3 buckets, and TLS misconfigurations. All findings were mapped to CIS Level 1 & 2 benchmarks using Prowler, with tooling support from Cloudsplaining, S3Scanner, SSLyze, and AWS CLI.</p>
-  <p>The project demonstrates expertise in threat modeling, reconnaissance, audit automation, and practical remediation strategies for cloud-native architectures.</p>
-  <div class="services">
-    <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-    <span class="tech-icon"><i class="fas fa-user-shield"></i> IAM</span>
-    <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-    <span class="tech-icon"><i class="fas fa-lock"></i> TLS</span>
-    <span class="tech-icon"><i class="fas fa-search"></i> Prowler</span>
-    <span class="tech-icon"><i class="fas fa-exclamation-triangle"></i> CIS Benchmarks</span>
-    <span class="tech-icon"><i class="fas fa-network-wired"></i> Nmap</span>
-    <span class="tech-icon"><i class="fas fa-terminal"></i> AWS CLI</span>
-  </div>
-</div>
-<div class="project-card animate-slide-in" data-tags="aws eks argo-cd istio kubernetes monitoring security grafana prometheus terraform multi-region">
-  <h2>FinBankOps: Secure, Multi-Region Kubernetes Infrastructure for Fintech on AWS</h2>
-  <p>
-    <a href="https://github.com/Tosin-STIL/eks-microservice-demo" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a> |
-    <a href="https://www.linkedin.com/pulse/finbankops-secure-multi-region-kubernetes-fintech-aws-jegede-ykiaf/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Article</a>
-  </p>
-  <p>This project implements a production-grade, secure Kubernetes infrastructure for fintech using Amazon EKS. It supports multi-region deployment, blue/green releases, and GitOps-driven workflows via ArgoCD. Istio handles ingress traffic and internal service mesh routing, while security is reinforced using External Secrets Operator and kube-bench/kubescape audits.</p>
-  <p>Observability is ensured via Prometheus, Grafana, and CloudWatch. The platform enables PCI-DSS-aligned compliance while providing scalable deployment for containerized microservices stored in Amazon ECR.</p>
-  <div class="services">
-    <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-    <span class="tech-icon"><i class="fas fa-server"></i> EKS</span>
-    <span class="tech-icon"><i class="fas fa-code-branch"></i> ArgoCD</span>
-    <span class="tech-icon"><i class="fas fa-project-diagram"></i> Istio</span>
-    <span class="tech-icon"><i class="fas fa-lock"></i> Secrets Mgmt</span>
-    <span class="tech-icon"><i class="fas fa-chart-line"></i> Prometheus</span>
-    <span class="tech-icon"><i class="fas fa-chart-pie"></i> Grafana</span>
-    <span class="tech-icon"><i class="fas fa-shield-alt"></i> KubeBench</span>
-  </div>
-</div>
-<div class="project-card animate-slide-in" data-tags="aws ecs ecr fargate terraform github-actions ml monitoring sns cloudwatch">
-  <h2>Design, Training, and Deployment of a DevOps-Enabled Real-Time ML Fraud Detection System</h2>
-  <p>
-    <a href="https://github.com/Tosin-STIL/fraud-detection-infra" target="_blank"><i class="fab fa-github"></i> Infra Repo</a> |
-    <a href="https://github.com/Tosin-STIL/fraud-detection-app" target="_blank"><i class="fab fa-github"></i> App Repo</a> |
-    <a href="https://www.linkedin.com/pulse/design-training-deployment-devops-enabled-real-time-ml-jegede-8pu4f/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Article</a>
-  </p>
-  <p>This project showcases the complete pipeline for a real-time fraud detection system using a containerized microservices architecture on AWS. Ingestion, inference, and action microservices are deployed to Amazon ECS (Fargate), and their Docker images are stored in ECR. Machine learning inference is based on a trained model that detects anomalous financial transactions in real-time.</p>
-  <p>Infrastructure is managed with Terraform, CI/CD is orchestrated via GitHub Actions, and observability is achieved through Amazon CloudWatch. Fraud alerts are published via Amazon SNS, and the architecture is extensible to support compliance audit logging using Amazon RDS.</p>
-  <div class="services">
-    <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-    <span class="tech-icon"><i class="fas fa-box"></i> ECS Fargate</span>
-    <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-    <span class="tech-icon"><i class="fas fa-database"></i> Amazon RDS</span>
-    <span class="tech-icon"><i class="fas fa-lock"></i> SNS</span>
-    <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-    <span class="tech-icon"><i class="fas fa-chart-line"></i> CloudWatch</span>
-    <span class="tech-icon"><i class="fas fa-brain"></i> ML</span>
-  </div>
-</div>
-        <div class="project-card animate-slide-in" data-tags="aws eks terraform monitoring kubernetes cloudwatch">
-          <h2>Secure Three-Tier Web Application Deployment on Kubernetes with AWS Monitoring</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/Three-tier-Application-Deployment-" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/secure-three-tier-web-application-deployment-aws-oluwatosin-jegede-7fdif/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This project focused on deploying a secure, scalable three-tier web application using AWS and Kubernetes. I provisioned a robust EKS cluster and built Docker containers for both frontend and backend services, hosted securely via AWS ECR. To route traffic efficiently, I configured an ALB Ingress Controller. For observability, I enabled CloudWatch control plane logs to track API server activities, authenticator logs, and audits. The infrastructure was designed to scale dynamically, with IAM roles enforcing principle of least privilege across services.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fab fa-docker"></i> Docker</span>
-            <span class="tech-icon"><i class="fas fa-network-wired"></i> EKS</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fas fa-chart-line"></i> CloudWatch</span>
-            <span class="tech-icon"><i class="fas fa-lock"></i> IAM</span>
+    </section>
+
+    <!-- Filters -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-filter"></i> Filter Projects</h2>
+          <span class="filter-count" id="countLabel">Showing all projects</span>
+        </div>
+        <div class="filters" role="toolbar" aria-label="Project filters">
+          <input 
+            id="searchBox" 
+            type="search" 
+            placeholder="Search by keyword, service, or title..." 
+            aria-label="Search projects"
+          />
+          <div style="display:flex; flex-wrap:wrap; gap:8px">
+            <button class="pill chip" data-chip="aws" aria-pressed="false">
+              <i class="fa-brands fa-aws"></i> AWS
+            </button>
+            <button class="pill chip" data-chip="security" aria-pressed="false">
+              <i class="fa-solid fa-shield-halved"></i> Security
+            </button>
+            <button class="pill chip" data-chip="kubernetes" aria-pressed="false">
+              <i class="fa-solid fa-dharmachakra"></i> Kubernetes
+            </button>
+            <button class="pill chip" data-chip="cicd" aria-pressed="false">
+              <i class="fa-solid fa-code-branch"></i> CI/CD
+            </button>
+            <button class="pill chip" data-chip="monitoring" aria-pressed="false">
+              <i class="fa-solid fa-gauge-high"></i> Monitoring
+            </button>
+            <button class="pill chip" data-chip="ml" aria-pressed="false">
+              <i class="fa-solid fa-robot"></i> ML
+            </button>
           </div>
         </div>
-        <div class="project-card animate-slide-in" data-tags="aws s3 github-actions ec2 terraform grafana monitoring">
-          <h2>Secure Three-Tier Web Application with GitHub Actions CI/CD, S3 Hosting, Deployment to Dev and Prod Servers, and Comprehensive Monitoring</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/Three-tier-Application-Deployment-" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/secure-three-tier-web-application-github-actions-cicd-jegede-ikm4f/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>In this project, I built a fully automated, environment-aware deployment pipeline for a three-tier web application. The frontend was hosted on S3 while the backend (Node.js) ran on EC2 within a VPC. GitHub Actions orchestrated CI/CD pipelines across dev and prod branches. Infrastructure was provisioned with Terraform, including private/public subnets and NAT gateways. For monitoring, I installed the CloudWatch agent and configured AWS Managed Grafana dashboards with real-time CPU, memory, and disk usage metrics. Alerts were created for SLA-sensitive events. This setup exemplifies production-grade DevOps and cloud architecture.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> EC2</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-            <span class="tech-icon"><i class="fas fa-chart-line"></i> CloudWatch</span>
-            <span class="tech-icon"><i class="fas fa-chart-pie"></i> Managed Grafana</span>
-          </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <div class="container">
+        <div id="projectsGrid" class="projects-grid">
+
+          <!-- Cloud-Native Job Portal -->
+          <article 
+            class="panel project-card"
+            data-title="From Frustration to Solution: Building a Cloud-Native Job Portal That Actually Works"
+            data-tags="aws,lambda,s3,rds,api-gateway,postgresql,javascript,devops,full-stack"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-briefcase"></i> Full-Stack Platform
+            </div>
+            <h3>Cloud-Native Job Portal Platform</h3>
+            <p class="project-description">
+              Designed and built a production-ready job portal from scratch to solve real-world hiring inefficiencies. The platform features lightning-fast applications, organized admin dashboards, and zero-downtime reliability using AWS Lambda, RDS PostgreSQL, S3 static hosting, and API Gateway. Implemented environment-aware architecture handling different database schemas across dev/prod, JWT authentication, and secure file uploads with automatic cleanup.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">S3</span>
+              <span class="tag">RDS</span>
+              <span class="tag">API Gateway</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">DevOps</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin/devop-job" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/pulse/from-frustration-solution-building-cloud-native-job-portal-jegede-7spyf/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- AI Healthcare Patient Identity Verification -->
+          <article 
+            class="panel project-card"
+            data-title="AI in Healthcare: Patient Identity Verification with Rekognition and DynamoDB"
+            data-tags="aws,rekognition,dynamodb,lambda,api-gateway,healthcare,ai,ml,serverless"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-user-doctor"></i> Healthcare AI
+            </div>
+            <h3>AI Healthcare Patient Identity Verification</h3>
+            <p class="project-description">
+              Built a production-grade serverless AI pipeline for Cleveland Medical Center to streamline patient check-in using facial recognition. The system registers patients with facial images at appointment scheduling and identifies them during check-in by matching faces against a secure collection using Amazon Rekognition, reducing identity mismatches and speeding up triage processes with strict healthcare data governance.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Rekognition</span>
+              <span class="tag">DynamoDB</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">API Gateway</span>
+              <span class="tag">Healthcare</span>
+              <span class="tag">AI/ML</span>
+              <span class="tag">Serverless</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin/rekognition-patient-id" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/pulse/ai-healthcare-patient-identity-verification-dynamodb-jegede-sx17f/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- AWS Cloud Penetration Test -->
+          <article 
+            class="panel project-card"
+            data-title="AWS Cloud Penetration Test: Real-World Risk Assessment on Production-Grade Infrastructure"
+            data-tags="aws,security,iam,s3,tls,prowler,cis,penetration-testing,compliance"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-shield-halved"></i> Security Assessment
+            </div>
+            <h3>AWS Cloud Penetration Test: Real-World Risk Assessment</h3>
+            <p class="project-description">
+              This penetration test evaluated the security posture of an AWS production-grade system across IAM, S3, TLS configurations, and compliance alignment. Findings included overly permissive IAM policies, public S3 buckets, and TLS misconfigurations. All findings were mapped to CIS Level 1 & 2 benchmarks using Prowler, with tooling support from Cloudsplaining, S3Scanner, SSLyze, and AWS CLI. The project demonstrates expertise in threat modeling, reconnaissance, audit automation, and practical remediation strategies for cloud-native architectures.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">IAM</span>
+              <span class="tag">S3</span>
+              <span class="tag">TLS</span>
+              <span class="tag">Prowler</span>
+              <span class="tag">CIS Benchmarks</span>
+              <span class="tag">Nmap</span>
+              <span class="tag">AWS CLI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-solid fa-file-lines"></i> Redacted Report</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- FinBankOps -->
+          <article 
+            id="finbankops"
+            class="anchor-offset panel project-card"
+            data-title="FinBankOps: Secure, Multi-Region Kubernetes Infrastructure for Fintech on AWS"
+            data-tags="aws,eks,kubernetes,argocd,istio,gitops,fintech,security,prometheus,grafana"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-network-wired"></i> Platform Engineering
+            </div>
+            <h3>FinBankOps: Secure, Multi-Region Kubernetes Infrastructure for Fintech</h3>
+            <p class="project-description">
+              This project implements a production-grade, secure Kubernetes infrastructure for fintech using Amazon EKS. It supports multi-region deployment, blue/green releases, and GitOps-driven workflows via ArgoCD. Istio handles ingress traffic and internal service mesh routing, while security is reinforced using External Secrets Operator and kube-bench/kubescape audits. Observability is ensured via Prometheus, Grafana, and CloudWatch. The platform enables PCI-DSS-aligned compliance while providing scalable deployment for containerized microservices stored in Amazon ECR.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">EKS</span>
+              <span class="tag">ArgoCD</span>
+              <span class="tag">Istio</span>
+              <span class="tag">Secrets Mgmt</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">KubeBench</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Fraud Detection System -->
+          <article 
+            id="fraud-detection"
+            class="anchor-offset panel project-card"
+            data-title="Design, Training, and Deployment of a DevOps-Enabled Real-Time ML Fraud Detection System"
+            data-tags="aws,ml,ecs,fargate,terraform,github-actions,cloudwatch,sns,fraud-detection"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-robot"></i> ML & DevOps
+            </div>
+            <h3>DevOps-Enabled Real-Time ML Fraud Detection System</h3>
+            <p class="project-description">
+              This project showcases the complete pipeline for a real-time fraud detection system using a containerized microservices architecture on AWS. Ingestion, inference, and action microservices are deployed to Amazon ECS (Fargate), and their Docker images are stored in ECR. Machine learning inference is based on a trained model that detects anomalous financial transactions in real-time. Infrastructure is managed with Terraform, CI/CD is orchestrated via GitHub Actions, and observability is achieved through Amazon CloudWatch. Fraud alerts are published via Amazon SNS, and the architecture is extensible to support compliance audit logging using Amazon RDS.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">ECS Fargate</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Amazon RDS</span>
+              <span class="tag">SNS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">ML</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> Infra Repo</a>
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> App Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Secure Three-Tier Web App on Kubernetes -->
+          <article 
+            class="panel project-card"
+            data-title="Secure Three-Tier Web Application Deployment on Kubernetes with AWS Monitoring"
+            data-tags="aws,kubernetes,eks,docker,terraform,cloudwatch,iam,security"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-cube"></i> Application Platform
+            </div>
+            <h3>Secure Three-Tier Web Application on Kubernetes</h3>
+            <p class="project-description">
+              This project focused on deploying a secure, scalable three-tier web application using AWS and Kubernetes. I provisioned a robust EKS cluster and built Docker containers for both frontend and backend services, hosted securely via AWS ECR. To route traffic efficiently, I configured an ALB Ingress Controller. For observability, I enabled CloudWatch control plane logs to track API server activities, authenticator logs, and audits. The infrastructure was designed to scale dynamically, with IAM roles enforcing principle of least privilege across services.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Docker</span>
+              <span class="tag">EKS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">IAM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Three-Tier with CI/CD -->
+          <article 
+            class="panel project-card"
+            data-title="Secure Three-Tier Web Application with GitHub Actions CI/CD, S3 Hosting, and Comprehensive Monitoring"
+            data-tags="aws,ec2,terraform,github-actions,s3,cloudwatch,grafana,cicd"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-code-branch"></i> CI/CD & Infrastructure
+            </div>
+            <h3>Three-Tier Web App with GitHub Actions CI/CD</h3>
+            <p class="project-description">
+              In this project, I built a fully automated, environment-aware deployment pipeline for a three-tier web application. The frontend was hosted on S3 while the backend (Node.js) ran on EC2 within a VPC. GitHub Actions orchestrated CI/CD pipelines across dev and prod branches. Infrastructure was provisioned with Terraform, including private/public subnets and NAT gateways. For monitoring, I installed the CloudWatch agent and configured AWS Managed Grafana dashboards with real-time CPU, memory, and disk usage metrics. Alerts were created for SLA-sensitive events. This setup exemplifies production-grade DevOps and cloud architecture.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">EC2</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">S3</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">Managed Grafana</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Recipe-Sharing Application -->
+          <article 
+            class="panel project-card"
+            data-title="Deploying, Securing, and Monitoring a Cloud-Native Recipe-Sharing Application"
+            data-tags="aws,s3,react,fastapi,ec2,cloudformation,prometheus,grafana,monitoring"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-utensils"></i> Full-Stack Application
+            </div>
+            <h3>Cloud-Native Recipe-Sharing Application</h3>
+            <p class="project-description">
+              To modernize the way I share culinary recipes, I developed and deployed a cloud-native FastAPI application integrated with a React frontend hosted on S3. The backend API was containerized and deployed to EC2, exposed via API Gateway. CloudFormation handled infrastructure provisioning. To ensure performance visibility, I configured Prometheus to scrape FastAPI metrics and visualized real-time traffic using Grafana dashboards. I designed two access layers: a user interface and an admin portal, reflecting real-world content management workflows.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">S3</span>
+              <span class="tag">React</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">EC2</span>
+              <span class="tag">CloudFormation</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- End-to-End DevOps Pipeline -->
+          <article 
+            class="panel project-card"
+            data-title="End-to-End DevOps Pipeline Implementation with GitHub Actions, AWS EKS, and ELK Stack"
+            data-tags="aws,terraform,github-actions,docker,eks,prometheus,grafana,elk,cicd"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-infinity"></i> Full DevOps Pipeline
+            </div>
+            <h3>End-to-End DevOps Pipeline with EKS & ELK Stack</h3>
+            <p class="project-description">
+              This project implemented a full-stack DevOps solution using GitHub Actions for CI, Terraform for infrastructure automation, and Kubernetes on AWS EKS for orchestration. Dockerized applications were built and deployed with Kubernetes manifests. Logs were centralized using the ELK stack, while Prometheus and Grafana enabled detailed performance monitoring and alerting. Security was reinforced through IAM policies, encrypted storage, and TLS via ACM certificates.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Docker</span>
+              <span class="tag">EKS</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">ELK Stack</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Disaster Recovery -->
+          <article 
+            class="panel project-card"
+            data-title="Automated Cloud Disaster Recovery and Business Continuity Solution"
+            data-tags="aws,terraform,github-actions,ec2,s3,route53,datadog,disaster-recovery"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-shield-alt"></i> Disaster Recovery
+            </div>
+            <h3>Automated Cloud Disaster Recovery Solution</h3>
+            <p class="project-description">
+              This disaster recovery project leveraged AWS infrastructure to build a resilient architecture that could handle regional failover, backup, and restoration. Using Terraform for reproducible infrastructure and GitHub Actions for automation, I integrated Datadog for system observability and alerting to ensure readiness in business continuity scenarios.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">EC2</span>
+              <span class="tag">S3</span>
+              <span class="tag">Route 53</span>
+              <span class="tag">Datadog</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Containerized WebApp -->
+          <article 
+            class="panel project-card"
+            data-title="Containerizing, Automating, and Monitoring a WebApp with Docker and CI/CD"
+            data-tags="docker,github-actions,nodejs,prometheus,grafana,monitoring,cicd"
+          >
+            <div class="project-meta">
+              <i class="fa-brands fa-docker"></i> Containerization
+            </div>
+            <h3>Containerized WebApp with CI/CD & Monitoring</h3>
+            <p class="project-description">
+              This project involved containerizing a Node.js web app, deploying it using a CI/CD pipeline built with GitHub Actions, and configuring Prometheus and Grafana to provide visibility into app health and performance. The goal was to streamline releases and provide real-time monitoring of container behavior and HTTP requests.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- ML Model Deployment -->
+          <article 
+            class="panel project-card"
+            data-title="Comprehensive Deployment and Monitoring of a Machine Learning Model with Flask on AWS"
+            data-tags="aws,flask,ml,cloudformation,s3,ec2,prometheus,grafana,security-hub"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-brain"></i> ML Deployment
+            </div>
+            <h3>ML Model Deployment with Flask on AWS</h3>
+            <p class="project-description">
+              I deployed a Flask-based ML model as a production API on EC2 using Terraform and GitHub Actions. AWS CloudFormation and S3 were used for configuration and storage. Monitoring was integrated with Prometheus and Grafana, and AWS Security Hub was configured for compliance audits and vulnerability detection.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Flask</span>
+              <span class="tag">ML Model</span>
+              <span class="tag">CloudFormation</span>
+              <span class="tag">S3</span>
+              <span class="tag">EC2</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">Security Hub</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- AWS Amplify CI/CD -->
+          <article 
+            class="panel project-card"
+            data-title="CI/CD Pipeline for Scalable Web App using AWS Amplify and CodePipeline"
+            data-tags="aws,amplify,terraform,lambda,rds,codepipeline,cloudwatch,cicd"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-rocket"></i> Serverless CI/CD
+            </div>
+            <h3>Scalable Web App CI/CD with AWS Amplify</h3>
+            <p class="project-description">
+              This project centered on building a CI/CD pipeline for a React-based web application. The frontend was deployed using AWS Amplify, and backend logic was handled with AWS Lambda. CodePipeline and CodeBuild automated deployments, and CloudWatch monitored performance metrics and logs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS Amplify</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">AWS Lambda</span>
+              <span class="tag">RDS</span>
+              <span class="tag">CodePipeline</span>
+              <span class="tag">CloudWatch</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- GCP Full-Stack -->
+          <article 
+            class="panel project-card"
+            data-title="Automated CI/CD for Full-Stack Application on Google Cloud Platform"
+            data-tags="gcp,docker,terraform,github-actions,cloud-run,monitoring"
+          >
+            <div class="project-meta">
+              <i class="fa-brands fa-google"></i> GCP Platform
+            </div>
+            <h3>Full-Stack Application CI/CD on Google Cloud</h3>
+            <p class="project-description">
+              I deployed a full-stack application on GCP using Docker containers, Terraform for infra provisioning, and GitHub Actions for CI/CD. Monitoring and alerting were set up using the Google Cloud Operations Suite, providing clear visibility into deployments and runtime behavior.
+            </p>
+            <div class="project-tags">
+              <span class="tag">GCP</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Cloud Run</span>
+              <span class="tag">Monitoring</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Jenkins CI/CD -->
+          <article 
+            class="panel project-card"
+            data-title="Efficient CI/CD Implementation for Node.js App using Jenkins and Amazon S3"
+            data-tags="nodejs,github,jenkins,s3,cicd"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-gear"></i> Jenkins Pipeline
+            </div>
+            <h3>Node.js CI/CD with Jenkins & S3 Artifacts</h3>
+            <p class="project-description">
+              This project focused on implementing an efficient Jenkins-based CI/CD pipeline for a Node.js application. Artifacts were managed and stored using S3. GitHub served as the version control system, and automated builds ensured fast feedback loops.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">Amazon S3</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- AWS Config Compliance -->
+          <article 
+            class="panel project-card"
+            data-title="AWS Infrastructure Compliance Audit System with AWS Config and Lambda"
+            data-tags="aws,config,lambda,compliance,iam,automation"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-clipboard-check"></i> Compliance Automation
+            </div>
+            <h3>AWS Infrastructure Compliance Audit System</h3>
+            <p class="project-description">
+              This compliance audit system utilized AWS Config to evaluate resource conformance across services. Lambda functions were triggered on non-compliant rules, enabling proactive remediation and alerting via SNS.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS Config</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">Compliance</span>
+              <span class="tag">IAM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- Security Dashboard -->
+          <article 
+            id="security-pt"
+            class="anchor-offset panel project-card"
+            data-title="AWS Cloud Security Dashboard"
+            data-tags="aws,iam,s3,lambda,cloudwatch,security,dashboard"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-dashboard"></i> Security Dashboard
+            </div>
+            <h3>AWS Cloud Security Dashboard</h3>
+            <p class="project-description">
+              I designed a web-based dashboard to visualize and monitor key AWS security metrics, including IAM role usage, open security groups, and policy violations, offering centralized oversight for cloud posture management.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">IAM</span>
+              <span class="tag">S3</span>
+              <span class="tag">Lambda</span>
+              <span class="tag">CloudWatch</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
         </div>
-        <div class="project-card animate-slide-in" data-tags="fastapi aws s3 react grafana prometheus ec2 cloudformation">
-          <h2>Deploying, Securing, and Monitoring a Cloud-Native Recipe-Sharing Application with AWS, Prometheus, and Grafana</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/AWS-Cloud-Projects/tree/main/chapter3/code" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/deploying-securing-monitoring-cloud-native-aws-grafana-jegede-lhs5f/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>To modernize the way I share culinary recipes, I developed and deployed a cloud-native FastAPI application integrated with a React frontend hosted on S3. The backend API was containerized and deployed to EC2, exposed via API Gateway. CloudFormation handled infrastructure provisioning. To ensure performance visibility, I configured Prometheus to scrape FastAPI metrics and visualized real-time traffic using Grafana dashboards. I designed two access layers: a user interface and an admin portal, reflecting real-world content management workflows.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-            <span class="tech-icon"><i class="fab fa-react"></i> React</span>
-            <span class="tech-icon"><i class="fas fa-code"></i> FastAPI</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> EC2</span>
-            <span class="tech-icon"><i class="fas fa-project-diagram"></i> CloudFormation</span>
-            <span class="tech-icon"><i class="fas fa-fire"></i> Prometheus</span>
-            <span class="tech-icon"><i class="fas fa-chart-pie"></i> Grafana</span>
-          </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section>
+      <div class="container panel">
+        <div class="section-title">
+          <h2><i class="fas fa-rocket"></i> Ready to Build Something Amazing?</h2>
         </div>
-        <div class="project-card animate-slide-in" data-tags="aws eks terraform github-actions docker monitoring elk prometheus grafana">
-          <h2>End-to-End DevOps Pipeline Implementation: Automated Infrastructure, CI/CD, and Monitoring with GitHub Actions, AWS EKS, and ELK Stack</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/TOYE-devops-project" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/end-to-end-devops-pipeline-implementation-automated-cicd-jegede-e6dzf/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article</a>
-          </p>
-          <p>This project implemented a full-stack DevOps solution using GitHub Actions for CI, Terraform for infrastructure automation, and Kubernetes on AWS EKS for orchestration. Dockerized applications were built and deployed with Kubernetes manifests. Logs were centralized using the ELK stack, while Prometheus and Grafana enabled detailed performance monitoring and alerting. Security was reinforced through IAM policies, encrypted storage, and TLS via ACM certificates.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-            <span class="tech-icon"><i class="fab fa-docker"></i> Docker</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> EKS</span>
-            <span class="tech-icon"><i class="fas fa-chart-line"></i> Prometheus</span>
-            <span class="tech-icon"><i class="fas fa-chart-pie"></i> Grafana</span>
-            <span class="tech-icon"><i class="fas fa-search"></i> ELK Stack</span>
-          </div>
+        <p>
+          These projects represent real-world solutions that delivered measurable business value. If you're looking to implement similar infrastructure improvements, optimize costs, enhance security, or build reliable platforms, I'd love to discuss how we can work together.
+        </p>
+        <div class="cta" style="justify-content: center; margin-top: 24px;">
+          <a class="btn primary" href="mailto:careers.tosinjegede@gmail.com?subject=DevOps%20Project%20Collaboration"><i class="fa-solid fa-paper-plane"></i> Let's Collaborate</a>
+          <a class="btn" href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> Connect on LinkedIn</a>
+          <a class="btn" href="experience.html"><i class="fa-solid fa-briefcase"></i> View Experience</a>
         </div>
-        <div class="project-card animate-slide-in" data-tags="aws terraform github-actions datadog disaster-recovery s3 route53 ec2">
-          <h2>Automated Cloud Disaster Recovery and Business Continuity Solution</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/disaster-recovery-plan" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/automated-cloud-disaster-recovery-business-continuity-oluwatosin-dg9of/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This disaster recovery project leveraged AWS infrastructure to build a resilient architecture that could handle regional failover, backup, and restoration. Using Terraform for reproducible infrastructure and GitHub Actions for automation, I integrated Datadog for system observability and alerting to ensure readiness in business continuity scenarios.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> EC2</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-            <span class="tech-icon"><i class="fas fa-globe"></i> Route 53</span>
-            <span class="tech-icon"><i class="fas fa-bell"></i> Datadog</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="docker github-actions prometheus grafana nodejs ci-cd monitoring">
-          <h2>Containerizing, Automating, and Monitoring a WebApp with Docker, GitHub, CI/CD, Prometheus, and Grafana</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/my-nodejs-app" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/containerizing-automating-monitoring-webapp-docker-cicd-oluwatosin-4uthf/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This project involved containerizing a Node.js web app, deploying it using a CI/CD pipeline built with GitHub Actions, and configuring Prometheus and Grafana to provide visibility into app health and performance. The goal was to streamline releases and provide real-time monitoring of container behavior and HTTP requests.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-docker"></i> Docker</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-            <span class="tech-icon"><i class="fab fa-node-js"></i> Node.js</span>
-            <span class="tech-icon"><i class="fas fa-fire"></i> Prometheus</span>
-            <span class="tech-icon"><i class="fas fa-chart-pie"></i> Grafana</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="aws flask ml-model prometheus grafana cloudformation monitoring s3 ec2">
-          <h2>Comprehensive Deployment and Monitoring of a Machine Learning Model with Flask on AWS Using Prometheus and Grafana</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/ml-model-serving.git" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/comprehensive-deployment-monitoring-machine-learning-model-jegede-mfmaf/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>I deployed a Flask-based ML model as a production API on EC2 using Terraform and GitHub Actions. AWS CloudFormation and S3 were used for configuration and storage. Monitoring was integrated with Prometheus and Grafana, and AWS Security Hub was configured for compliance audits and vulnerability detection.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-code"></i> Flask</span>
-            <span class="tech-icon"><i class="fas fa-brain"></i> ML Model</span>
-            <span class="tech-icon"><i class="fas fa-project-diagram"></i> CloudFormation</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> EC2</span>
-            <span class="tech-icon"><i class="fas fa-fire"></i> Prometheus</span>
-            <span class="tech-icon"><i class="fas fa-chart-pie"></i> Grafana</span>
-            <span class="tech-icon"><i class="fas fa-shield-alt"></i> Security Hub</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="aws amplify lambda codepipeline terraform cloudwatch rds nextjs">
-          <h2>CI/CD Pipeline for Scalable Web App using AWS Amplify, AWS CodeBuild, AWS CodePipeline, Terraform, Lambda, and CloudWatch</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/aws-devops-project" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/cicd-pipeline-scalable-web-app-using-aws-amplify-jegede-oluwatosin-0ha3f/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This project centered on building a CI/CD pipeline for a React-based web application. The frontend was deployed using AWS Amplify, and backend logic was handled with AWS Lambda. CodePipeline and CodeBuild automated deployments, and CloudWatch monitored performance metrics and logs.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS Amplify</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fas fa-lambda"></i> AWS Lambda</span>
-            <span class="tech-icon"><i class="fas fa-server"></i> RDS</span>
-            <span class="tech-icon"><i class="fas fa-project-diagram"></i> CodePipeline</span>
-            <span class="tech-icon"><i class="fas fa-chart-line"></i> CloudWatch</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="gcp docker terraform github-actions cloud-run monitoring ci-cd">
-          <h2>Automated CI/CD for a Full-Stack Application on Google Cloud Platform Using Docker, Terraform, GitHub Actions, and Google Cloud Operations Suite</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/full-stack-gcp-ci-cd" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/automated-cicd-full-stack-applications-gcp-using-docker-jegede-oumzf/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>I deployed a full-stack application on GCP using Docker containers, Terraform for infra provisioning, and GitHub Actions for CI/CD. Monitoring and alerting were set up using the Google Cloud Operations Suite, providing clear visibility into deployments and runtime behavior.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-google"></i> GCP</span>
-            <span class="tech-icon"><i class="fab fa-docker"></i> Docker</span>
-            <span class="tech-icon"><i class="fas fa-code-branch"></i> Terraform</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub Actions</span>
-            <span class="tech-icon"><i class="fas fa-cloud"></i> Cloud Run</span>
-            <span class="tech-icon"><i class="fas fa-eye"></i> Monitoring</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="jenkins s3 github nodejs cicd automation">
-          <h2>Efficient CI/CD Implementation for a Node.js App using Jenkins and Amazon S3 for Artifact Management</h2>
-          <p>
-            <a href="https://github.com/OluwaTossin/my-node-app" target="_blank">
-              <i class="fab fa-github"></i> GitHub Repo
-            </a> |
-            <a href="https://www.linkedin.com/pulse/efficient-cicd-implementation-nodejs-app-using-amazon-oluwatosin-aii2f/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This project focused on implementing an efficient Jenkins-based CI/CD pipeline for a Node.js application. Artifacts were managed and stored using S3. GitHub served as the version control system, and automated builds ensured fast feedback loops.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-node-js"></i> Node.js</span>
-            <span class="tech-icon"><i class="fab fa-github"></i> GitHub</span>
-            <span class="tech-icon"><i class="fas fa-cogs"></i> Jenkins</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> Amazon S3</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="aws config lambda compliance iam monitoring">
-          <h2>AWS Infrastructure Compliance Audit System with AWS Config and Lambda</h2>
-          <p>
-            <a href="https://www.linkedin.com/pulse/aws-infrastructure-compliance-audit-system-config-jegede-oluwatosin-b4u6f/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>This compliance audit system utilized AWS Config to evaluate resource conformance across services. Lambda functions were triggered on non-compliant rules, enabling proactive remediation and alerting via SNS.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS Config</span>
-            <span class="tech-icon"><i class="fas fa-lambda"></i> Lambda</span>
-            <span class="tech-icon"><i class="fas fa-shield-alt"></i> Compliance</span>
-            <span class="tech-icon"><i class="fas fa-lock"></i> IAM</span>
-          </div>
-        </div>
-        <div class="project-card animate-slide-in" data-tags="aws security iam s3 lambda cloudwatch dashboard">
-          <h2>AWS Cloud Security Dashboard</h2>
-          <p>
-            <a href="https://www.linkedin.com/pulse/aws-cloud-security-dashboard-jegede-oluwatosin-ifwyf/" target="_blank">
-              <i class="fab fa-linkedin"></i> LinkedIn Article
-            </a>
-          </p>
-          <p>I designed a web-based dashboard to visualize and monitor key AWS security metrics, including IAM role usage, open security groups, and policy violations, offering centralized oversight for cloud posture management.</p>
-          <div class="services">
-            <span class="tech-icon"><i class="fab fa-aws"></i> AWS</span>
-            <span class="tech-icon"><i class="fas fa-lock"></i> IAM</span>
-            <span class="tech-icon"><i class="fas fa-database"></i> S3</span>
-            <span class="tech-icon"><i class="fas fa-lambda"></i> Lambda</span>
-            <span class="tech-icon"><i class="fas fa-chart-bar"></i> CloudWatch</span>
-          </div>
-        </div>
-      </div> <!-- END .portfolio-grid -->
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="/devops-engineer-london.html">DevOps Engineer in London</a>
-      <a href="/devops-engineer-manchester.html">AWS DevOps Engineer in Manchester</a>
-    </nav>
-    <p>Serving London • Manchester • UK-wide • Remote</p>
-    <p>&copy; 2025 Oluwatosin Jegede. All rights reserved.</p>
+  <footer>
+    <div class="container small">
+      © 2025 Oluwatosin Jegede. Professional portfolio. 
+      <span aria-hidden="true">·</span> <a href="about.html">About</a>
+      <span aria-hidden="true">·</span> <a href="portfolio.html">Portfolio</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-london.html">DevOps Engineer in London</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-manchester.html">AWS DevOps Engineer in Manchester</a>
+    </div>
   </footer>
 
   <script src="js/scripts.js"></script>
 
-<!-- Back to Top Button -->
-<a href="#" id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></a>
+  <!-- Portfolio Filtering Script -->
+  <script>
+    (function() {
+      // Portfolio filtering functionality
+      const grid = document.getElementById("projectsGrid");
+      const cards = Array.from(grid.querySelectorAll(".project-card"));
+      const searchBox = document.getElementById("searchBox");
+      const chips = Array.from(document.querySelectorAll(".chip"));
+      const countLabel = document.getElementById("countLabel");
+
+      let activeTags = new Set();
+      let searchQuery = "";
+
+      function matchesFilters(card) {
+        const title = (card.getAttribute("data-title") || "").toLowerCase();
+        const tags = (card.getAttribute("data-tags") || "").toLowerCase().split(",");
+        const description = card.querySelector(".project-description").textContent.toLowerCase();
+        const searchableText = (title + " " + tags.join(" ") + " " + description).toLowerCase();
+
+        // Text search match
+        const textMatch = !searchQuery || searchableText.includes(searchQuery);
+        
+        // Tag filter match (all active tags must be present)
+        const tagMatch = activeTags.size === 0 || [...activeTags].every(t => tags.includes(t));
+        
+        return textMatch && tagMatch;
+      }
+
+      function updateDisplay() {
+        let visibleCount = 0;
+        
+        cards.forEach(card => {
+          if (matchesFilters(card)) {
+            card.style.display = "flex";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Update count label
+        if (visibleCount === cards.length) {
+          countLabel.textContent = "Showing all projects";
+        } else {
+          countLabel.textContent = `Showing ${visibleCount} of ${cards.length} projects`;
+        }
+      }
+
+      // Search functionality
+      searchBox.addEventListener("input", () => {
+        searchQuery = searchBox.value.trim().toLowerCase();
+        updateDisplay();
+      });
+
+      // Tag chip functionality
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          const tag = chip.getAttribute("data-chip");
+          const isPressed = chip.getAttribute("aria-pressed") === "true";
+          
+          if (isPressed) {
+            chip.setAttribute("aria-pressed", "false");
+            activeTags.delete(tag);
+          } else {
+            chip.setAttribute("aria-pressed", "true");
+            activeTags.add(tag);
+          }
+          
+          updateDisplay();
+        });
+      });
+
+      // Hash navigation and highlighting
+      function handleHashNavigation() {
+        if (location.hash) {
+          const targetElement = document.querySelector(location.hash);
+          if (targetElement) {
+            // Ensure the card is visible (clear filters if needed)
+            if (!matchesFilters(targetElement)) {
+              // Clear search
+              searchBox.value = "";
+              searchQuery = "";
+              
+              // Clear tag filters
+              chips.forEach(chip => chip.setAttribute("aria-pressed", "false"));
+              activeTags.clear();
+              
+              updateDisplay();
+            }
+            
+            // Scroll to element
+            setTimeout(() => {
+              targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+              
+              // Add highlight animation
+              targetElement.classList.add("highlight-card");
+              setTimeout(() => {
+                targetElement.classList.remove("highlight-card");
+              }, 1600);
+            }, 100);
+          }
+        }
+      }
+
+      // Handle hash navigation on page load and hash change
+      window.addEventListener("load", handleHashNavigation);
+      window.addEventListener("hashchange", handleHashNavigation);
+
+      // Initialize display
+      updateDisplay();
+    })();
+  </script>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></a>
 </body>
-</html>
 </html>

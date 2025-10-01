@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Essentials -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terraform Best Practices: Managing Multi-Environment AWS Infrastructure | Oluwatosin Jegede</title>
+  <meta name="description" content="Learn advanced Terraform patterns for managing complex AWS infrastructure across multiple environments with state management, modules, and automated testing." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://oluwatossin.github.io/article-terraform-best-practices.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Terraform Best Practices: Managing Multi-Environment AWS Infrastructure" />
+  <meta property="og:description" content="Learn advanced Terraform patterns for managing complex AWS infrastructure across multiple environments with state management, modules, and automated testing." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://oluwatossin.github.io/article-terraform-best-practices.html" />
+  <meta property="og:image" content="https://oluwatossin.github.io/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Article-specific styles -->
+  <style>
+    /* Remove sticky header for clean reading experience */
+    header {
+      position: static !important;
+    }
+    
+    /* Full-width article page styling */
+    .article-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      min-height: calc(100vh - 200px);
+    }
+    
+    .article-header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--border);
+    }
+    
+    .article-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    
+    .article-subtitle {
+      font-size: 1.3rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+    
+    .article-meta > div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    
+    .article-content h2 {
+      font-size: 2.2rem;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      color: var(--text);
+      font-weight: 700;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 12px;
+    }
+    
+    .article-content h3 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    
+    .article-content h4 {
+      font-size: 1.4rem;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .article-content p {
+      margin: 24px 0;
+      line-height: 1.8;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin: 24px 0;
+      padding-left: 32px;
+      line-height: 1.8;
+    }
+    
+    .article-content li {
+      margin: 12px 0;
+    }
+    
+    .article-content li strong {
+      color: var(--accent);
+    }
+    
+    .article-content pre {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      overflow-x: auto;
+      margin: 32px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      box-shadow: var(--shadow);
+    }
+    
+    .article-content code {
+      background: var(--card);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.95em;
+      border: 1px solid var(--border);
+      color: var(--accent-2);
+      font-weight: 500;
+    }
+    
+    .article-content pre code {
+      background: none;
+      padding: 0;
+      border: none;
+      color: var(--text);
+      font-weight: 400;
+    }
+    
+    .article-content blockquote {
+      border-left: 6px solid var(--accent);
+      margin: 32px 0;
+      padding: 24px 32px;
+      background: var(--card);
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      color: var(--muted);
+      box-shadow: var(--shadow);
+    }
+    
+    .back-to-blog {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 32px;
+      padding: 12px 20px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-blog:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+      .article-page {
+        padding: 20px 16px;
+      }
+      
+      .article-title {
+        font-size: 2.2rem;
+      }
+      
+      .article-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .article-content {
+        font-size: 1rem;
+      }
+      
+      .article-content h2 {
+        font-size: 1.8rem;
+      }
+      
+      .article-content h3 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <div class="dot"></div>
+          Oluwatosin Jegede
+        </div>
+        <div class="navlinks">
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about.html"><i class="fas fa-user"></i> About</a>
+          <a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a>
+          <a href="portfolio.html"><i class="fas fa-th"></i> Portfolio</a>
+          <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <main class="container">
+    <article class="article-page">
+      <!-- Back to Blog -->
+      <a href="blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        Back to Blog
+      </a>
+
+      <!-- Article Header -->
+      <header class="article-header">
+        <h1 class="article-title">Terraform Best Practices: Managing Multi-Environment AWS Infrastructure</h1>
+        <p class="article-subtitle">Learn advanced Terraform patterns for managing complex AWS infrastructure across multiple environments with state management, modules, and automated testing.</p>
+        
+        <div class="article-meta">
+          <div class="article-date">
+            <i class="fas fa-calendar"></i>
+            <span>October 1, 2025</span>
+          </div>
+          <div class="article-read-time">
+            <i class="fas fa-clock"></i>
+            <span>12 min read</span>
+          </div>
+          <div class="article-category">
+            <i class="fa-solid fa-code"></i>
+            <span>Infrastructure as Code</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-content">
+        <h2>Introduction</h2>
+        <p>Infrastructure as Code (IaC) has revolutionized how we manage cloud resources, and Terraform stands at the forefront of this transformation. In this comprehensive guide, we'll explore advanced Terraform patterns that ensure scalable, maintainable, and secure infrastructure across multiple environments.</p>
+
+        <h2>Core Principles</h2>
+        <p>Before diving into specific patterns, let's establish the foundational principles that guide effective Terraform usage:</p>
+        
+        <ul>
+          <li><strong>Immutable Infrastructure:</strong> Treat infrastructure as immutable artifacts</li>
+          <li><strong>Version Control:</strong> All Terraform code must be version controlled</li>
+          <li><strong>Environment Separation:</strong> Clear boundaries between dev, staging, and production</li>
+          <li><strong>State Management:</strong> Centralized and secure state storage</li>
+        </ul>
+
+        <h2>Directory Structure</h2>
+        <p>A well-organized directory structure is crucial for maintainability. Here's our recommended approach:</p>
+
+        <pre><code>terraform/
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── terraform.tfvars
+│   ├── staging/
+│   └── production/
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── rds/
+│   └── eks/
+└── shared/
+    ├── backend.tf
+    └── providers.tf</code></pre>
+
+        <h2>State Management Best Practices</h2>
+        <p>Remote state management is critical for team collaboration and disaster recovery. We recommend using S3 with DynamoDB for state locking:</p>
+
+        <pre><code>terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket"
+    key            = "environments/production/terraform.tfstate"
+    region         = "us-west-2"
+    dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+  }
+}</code></pre>
+
+        <h2>Module Design Patterns</h2>
+        <p>Effective modules are the building blocks of scalable Terraform infrastructure. Follow these patterns:</p>
+
+        <h3>1. Composition over Inheritance</h3>
+        <p>Design modules to be composable rather than monolithic. Each module should have a single responsibility.</p>
+
+        <h3>2. Variable Validation</h3>
+        <p>Use Terraform's validation blocks to catch errors early:</p>
+
+        <pre><code>variable "environment" {
+  description = "Environment name"
+  type        = string
+  validation {
+    condition = contains(["dev", "staging", "production"], var.environment)
+    error_message = "Environment must be dev, staging, or production."
+  }
+}</code></pre>
+
+        <h3>3. Output Organization</h3>
+        <p>Structure outputs to provide clear interfaces between modules:</p>
+
+        <pre><code>output "vpc" {
+  description = "VPC configuration"
+  value = {
+    id         = aws_vpc.main.id
+    cidr_block = aws_vpc.main.cidr_block
+    subnets = {
+      public  = aws_subnet.public[*].id
+      private = aws_subnet.private[*].id
+    }
+  }
+}</code></pre>
+
+        <h2>Environment Management</h2>
+        <p>Managing multiple environments effectively requires careful planning and consistent patterns:</p>
+
+        <h3>Workspace Strategy</h3>
+        <p>Use Terraform workspaces for environment separation, but be aware of their limitations in team environments.</p>
+
+        <h3>Variable Management</h3>
+        <p>Implement a clear hierarchy for variable precedence:</p>
+        
+        <ol>
+          <li>Command-line flags</li>
+          <li>Environment variables</li>
+          <li>terraform.tfvars files</li>
+          <li>Variable defaults</li>
+        </ol>
+
+        <h2>Security Best Practices</h2>
+        <p>Security should be built into your Terraform workflow from day one:</p>
+
+        <blockquote>
+          <p>"Security is not a product, but a process." - Bruce Schneier</p>
+        </blockquote>
+
+        <h3>Secrets Management</h3>
+        <p>Never store secrets in Terraform files. Use services like AWS Secrets Manager or HashiCorp Vault:</p>
+
+        <pre><code>data "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = "database-password"
+}
+
+resource "aws_db_instance" "main" {
+  password = data.aws_secretsmanager_secret_version.db_password.secret_string
+  # ... other configuration
+}</code></pre>
+
+        <h2>Testing Strategies</h2>
+        <p>Implement comprehensive testing to catch issues before they reach production:</p>
+
+        <ul>
+          <li><strong>Static Analysis:</strong> Use tools like tfsec and checkov</li>
+          <li><strong>Unit Testing:</strong> Test individual modules with Terratest</li>
+          <li><strong>Integration Testing:</strong> Validate complete environments</li>
+          <li><strong>Compliance Testing:</strong> Ensure policy adherence</li>
+        </ul>
+
+        <h2>CI/CD Integration</h2>
+        <p>Automate your infrastructure deployment with robust CI/CD pipelines:</p>
+
+        <pre><code># GitHub Actions example
+name: Terraform Deploy
+on:
+  push:
+    branches: [main]
+    paths: ['terraform/**']
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2
+      - name: Terraform Plan
+        run: terraform plan -var-file="production.tfvars"
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve</code></pre>
+
+        <h2>Monitoring and Observability</h2>
+        <p>Build monitoring into your infrastructure from the start:</p>
+
+        <ul>
+          <li>Infrastructure metrics with CloudWatch</li>
+          <li>State drift detection</li>
+          <li>Cost monitoring and alerts</li>
+          <li>Resource tagging strategies</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Implementing these Terraform best practices will help you build robust, scalable, and maintainable infrastructure. Remember that infrastructure as code is not just about automation—it's about creating repeatable, reliable, and auditable systems that support your organization's growth.</p>
+
+        <p>Start small, iterate often, and always prioritize security and maintainability over speed. Your future self (and your team) will thank you.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container small">
+      © 2025 Oluwatosin Jegede. Professional portfolio. 
+      <span aria-hidden="true">·</span> <a href="about.html">About</a>
+      <span aria-hidden="true">·</span> <a href="portfolio.html">Portfolio</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-london.html">DevOps Engineer in London</a>
+      <span aria-hidden="true">·</span> <a href="devops-engineer-manchester.html">AWS DevOps Engineer in Manchester</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
