@@ -176,6 +176,21 @@
       font-size: 14px;
       font-weight: 500;
       color: var(--accent) !important;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      background-color: var(--accent);
+      color: var(--card) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .project-links a:active {
+      transform: translateY(0);
     }
 
     .anchor-offset {
@@ -287,6 +302,38 @@
     <section>
       <div class="container">
         <div id="projectsGrid" class="projects-grid">
+
+          <!-- Enterprise AI/ML Platform -->
+          <article 
+            id="enterprise-aiml"
+            class="panel project-card"
+            data-title="From Chaos to Control: Building an Enterprise AI/ML Platform That Actually Works in Production"
+            data-tags="aws,bedrock,ecs,fargate,airflow,mlops,streamlit,fastapi,cloudwatch,s3,iam,devSecOps"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-robot"></i> Enterprise AI/ML Platform
+            </div>
+            <h3>From Chaos to Control: Enterprise AI/ML Platform</h3>
+            <p class="project-description">
+              Built a production-ready enterprise AI/ML platform on AWS solving real fintech challenges: automatic text summarization, real-time anomaly detection, comprehensive model management, and intelligent chatbot with 8 foundation models. Platform features ECS Fargate auto-scaling (2-20 tasks), Apache Airflow orchestration, AWS Bedrock integration, and intelligent caching achieving 60% cost reduction. Includes live monitoring dashboards, DevSecOps practices, and enterprise-grade security with IAM least privilege, S3 encryption, and GuardDuty threat detection.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS Bedrock</span>
+              <span class="tag">ECS Fargate</span>
+              <span class="tag">Apache Airflow</span>
+              <span class="tag">MLOps</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">DevSecOps</span>
+              <span class="tag">S3</span>
+              <span class="tag">IAM</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin/secure-aiml-ops" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/pulse/from-chaos-control-building-enterprise-aiml-platform-actually-jegede-bj0nf/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
 
           <!-- Cloud-Native Job Portal -->
           <article 
