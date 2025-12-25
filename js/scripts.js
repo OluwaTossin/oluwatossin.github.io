@@ -71,9 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const navMenu = document.querySelector('.navlinks');
   
+  console.log('Mobile menu elements:', { mobileMenuToggle, navMenu });
+  
   if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       navMenu.classList.toggle('active');
+      console.log('Menu toggled, active:', navMenu.classList.contains('active'));
       
       // Animate hamburger menu
       const spans = mobileMenuToggle.querySelectorAll('span');
@@ -99,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         spans[2].style.transform = 'none';
       });
     });
+  } else {
+    console.error('Mobile menu elements not found!');
   }
 
   // Hamburger menu toggle (legacy support)

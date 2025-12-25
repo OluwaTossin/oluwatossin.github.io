@@ -270,7 +270,6 @@ header.scrolled {
   .nav {
     padding: 12px 20px;
     position: relative;
-    z-index: 100;
   }
   
   .mobile-menu-toggle {
@@ -280,7 +279,6 @@ header.scrolled {
   }
   
   .navlinks {
-    display: none;
     position: fixed;
     top: 60px;
     left: 0;
@@ -294,26 +292,17 @@ header.scrolled {
     padding: 20px;
     border-top: 1px solid rgba(13, 148, 136, 0.1);
     z-index: 1001;
-    margin-top: 0;
-    animation: slideDown 0.3s ease-out;
-    pointer-events: none;
     margin: 0;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
   }
   
   .navlinks.active {
+    max-height: 500px;
+    opacity: 1;
     display: flex !important;
-    pointer-events: auto;
   }
   
   .navlinks a {
