@@ -1,5 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme toggle removed; using single light theme.
+  // Add scrolled class to header on scroll
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all panels and cards
+  document.querySelectorAll('.panel, .card, .fade-in, .slide-in-left, .slide-in-right').forEach((el) => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+
+  // Add staggered animation delay
+  document.querySelectorAll('.projects-grid .panel, .projects-grid .card').forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.1}s`;
+  });
+
   // Set current year in footer
   const yearElement = document.getElementById("year");
   if(yearElement) {
@@ -81,9 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if(backToTopBtn) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
-        backToTopBtn.style.display = 'flex';
+        backToTopBtn.classList.add('visible');
       } else {
-        backToTopBtn.style.display = 'none';
+        backToTopBtn.classList.remove('visible');
       }
     });
 

@@ -4,15 +4,15 @@
   <!-- Essentials -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio - Platform & Cloud Architect UK | Enterprise Multi-Cloud Solutions | Oluwatosin Jegede</title>
-  <meta name="description" content="Portfolio of Oluwatosin Jegede - Platform & Cloud Architect: enterprise fintech platforms, multi-cloud architecture, and compliance frameworks across AWS/GCP environments with 99.95% uptime achievements." />
+  <title>Portfolio - Cloud & DevOps Engineer UK | AWS · GCP · Terraform · Kubernetes | SRE Projects | Oluwatosin Jegede</title>
+  <meta name="description" content="Portfolio of Oluwatosin Jegede - Cloud & DevOps Engineer: Production-grade AWS/GCP platforms, SRE-focused implementations, Terraform IaC, Kubernetes (EKS) orchestration. Case studies: AegisTickets (99.95% uptime), Enterprise AI/ML Platform, Cloud-Native Job Platform, AWS Security Assessments. Chester, UK." />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://oluwatossin.github.io/portfolio.html" />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Portfolio - Platform & Cloud Architect UK | Enterprise Multi-Cloud Solutions | Oluwatosin Jegede" />
-  <meta property="og:description" content="Platform & Cloud Architecture projects: enterprise fintech platforms, multi-cloud solutions, and compliance frameworks with 99.95% uptime achievements." />
+  <meta property="og:title" content="Portfolio - Cloud & DevOps Engineer UK | AWS · GCP · Terraform · Kubernetes | SRE Projects | Oluwatosin Jegede" />
+  <meta property="og:description" content="Cloud & DevOps Engineer portfolio: Production AWS/GCP platforms with SRE practices, 99.95% uptime achievements, Terraform-driven infrastructure. AegisTickets, Enterprise AI/ML, Security Assessments." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://oluwatossin.github.io/portfolio.html" />
   <meta property="og:image" content="https://oluwatossin.github.io/images/profile.jpg" />
@@ -31,13 +31,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Portfolio",
-    "name": "Oluwatosin Jegede - Platform & Cloud Architect Portfolio",
+    "name": "Oluwatosin Jegede - Cloud & DevOps Engineer Portfolio",
     "url": "https://oluwatossin.github.io/portfolio.html",
-    "description": "Portfolio showcasing enterprise multi-cloud platforms, fintech compliance frameworks, and DevOps solutions delivered by Platform & Cloud Architect Oluwatosin Jegede",
+    "description": "Portfolio showcasing production-grade cloud platforms, SRE implementations, Terraform-driven infrastructure, and Kubernetes orchestration delivered by Cloud & DevOps Engineer Oluwatosin Jegede",
     "author": {
       "@type": "Person",
       "name": "Oluwatosin Jegede",
-      "jobTitle": "Platform & Cloud Architect",
+      "jobTitle": "Cloud & DevOps Engineer",
       "@id": "https://oluwatossin.github.io/#person"
     },
     "workExample": [
@@ -334,10 +334,10 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand" aria-label="Site brand">
+      <a href="/" class="brand" aria-label="Site brand">
         <span class="dot" aria-hidden="true"></span>
         <span>Oluwatosin&nbsp;Jegede</span>
-      </div>
+      </a>
       <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
         <span></span>
         <span></span>
@@ -358,7 +358,12 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>My Projects</h1>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <h1>My Projects</h1>
+          <p class="sub">
+            <strong>Production-grade infrastructure, CI/CD pipelines, and cloud platforms across AWS and GCP</strong>
+          </p>
+        </div>
       </div>
     </section>
 
@@ -405,6 +410,99 @@
       <div class="container">
         <div id="projectsGrid" class="projects-grid">
 
+          <!-- Blood Pressure Calculator - CI/CD Pipeline -->
+          <article 
+            id="bp-calculator"
+            class="anchor-offset panel project-card"
+            data-title="Blood Pressure Calculator - CI/CD Pipeline Project"
+            data-tags="aspnet,dotnet,cicd,github-actions,terraform,testing,razor-pages,healthcare"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-code-branch"></i> CI/CD Pipeline Project
+            </div>
+            <h3>Blood Pressure Calculator - CI/CD Pipeline</h3>
+            <p class="project-description">
+              A production-ready ASP.NET Core Razor Pages application for blood pressure classification with full CI/CD pipeline, infrastructure-as-code, and comprehensive testing. Features automated build, test, and deployment workflows using GitHub Actions, infrastructure provisioning with Terraform, unit and integration testing, and health monitoring. Demonstrates modern DevOps practices including automated testing gates, environment-based deployments, and continuous integration/delivery patterns for .NET applications.
+            </p>
+            <div class="project-tags">
+              <span class="tag">ASP.NET Core</span>
+              <span class="tag">Razor Pages</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Unit Testing</span>
+              <span class="tag">Azure</span>
+              <span class="tag">DevOps</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin/bp" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+            </div>
+          </article>
+
+          <!-- AegisTickets: SRE-Focused Production System -->
+          <article 
+            id="aegistickets"
+            class="anchor-offset panel project-card"
+            data-title="AegisTickets: SRE-Focused Production EKS Platform with Golden-Signal Monitoring"
+            data-tags="aws,eks,kubernetes,terraform,sre,prometheus,grafana,slis,slos,error-budgets,observability"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-gauge-high"></i> SRE & Platform Engineering
+            </div>
+            <h3>AegisTickets: SRE-Focused Production EKS Platform</h3>
+            <p class="project-description">
+              Engineered a reliability-focused production ticketing system on AWS EKS implementing comprehensive SRE practices. The platform uses SLIs (latency, error rate, throughput), SLOs (99.9% availability target), and error budgets to guide autoscaling and operational decisions. Golden-signal monitoring (latency, traffic, errors, saturation) provides proactive incident detection. Features include Terraform-driven multi-node EKS cluster, horizontal pod autoscaling based on custom metrics, Prometheus for metric collection, Grafana dashboards for SLO tracking, and automated alerting for SLI violations. Demonstrates production-grade observability, incident response automation, and cost-performance trade-off analysis.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS EKS</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">SRE Practices</span>
+              <span class="tag">SLIs/SLOs</span>
+              <span class="tag">Error Budgets</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">Golden Signals</span>
+              <span class="tag">Observability</span>
+            </div>
+            <div class="project-links">
+              <a href="http://github.com/OluwaTossin/aegistickets-platform" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/pulse/aegistickets-production-ready-3-tier-app-aws-eks-slos-jegede-euiof" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
+          <!-- AegisPay Core: Multi-Cluster Platform -->
+          <article 
+            id="aegispay-core"
+            class="anchor-offset panel project-card"
+            data-title="AegisPay Core: Resilient, SRE-Grade Multi-Cluster Platform on AWS EKS"
+            data-tags="aws,eks,multi-cluster,kubernetes,terraform,istio,sre,resilience,prometheus,grafana,gitops"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-dharmachakra"></i> Multi-Cluster Platform Engineering
+            </div>
+            <h3>AegisPay Core: Resilient, SRE-Grade Multi-Cluster Platform on AWS EKS</h3>
+            <p class="project-description">
+              Engineered a resilient, SRE-grade multi-cluster payment processing platform on AWS EKS designed for high availability and disaster recovery. The platform implements advanced resilience patterns including cross-cluster service mesh with Istio, automated failover mechanisms, and multi-region data replication. Features comprehensive observability with Prometheus/Grafana, GitOps deployment with ArgoCD, zero-downtime upgrades, and production-grade security hardening. Demonstrates expertise in building mission-critical financial infrastructure with 99.99% uptime requirements, sophisticated monitoring, and automated incident response.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Multi-Cluster EKS</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Istio Service Mesh</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">SRE Practices</span>
+              <span class="tag">Resilience Engineering</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">ArgoCD</span>
+              <span class="tag">FinTech</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/in/oluwatosinjegede/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
           <!-- Enterprise AI/ML Platform -->
           <article 
             id="enterprise-aiml"
@@ -439,7 +537,8 @@
 
           <!-- Cloud-Native Job Portal -->
           <article 
-            class="panel project-card"
+            id="cloud-job-portal"
+            class="anchor-offset panel project-card"
             data-title="From Frustration to Solution: Building a Cloud-Native Job Portal That Actually Works"
             data-tags="aws,lambda,s3,rds,api-gateway,postgresql,javascript,devops,full-stack"
           >
@@ -497,7 +596,8 @@
 
           <!-- AWS Cloud Penetration Test -->
           <article 
-            class="panel project-card"
+            id="aws-pentest"
+            class="anchor-offset panel project-card"
             data-title="AWS Cloud Penetration Test: Real-World Risk Assessment on Production-Grade Infrastructure"
             data-tags="aws,security,iam,s3,tls,prowler,cis,penetration-testing,compliance"
           >
