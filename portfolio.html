@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <!-- Essentials -->
   <meta charset="utf-8" />
@@ -43,6 +43,14 @@
     "workExample": [
       {
         "@type": "CreativeWork",
+        "name": "Autonomous DevOps Incident Response Agent",
+        "description": "AI-powered incident triage and diagnosis engine: RAG with FAISS over runbooks and logs, LangGraph agent with guardrails, structured JSON over HTTP, first-response output under 30 seconds",
+        "genre": "AIOps & SRE",
+        "keywords": ["RAG", "FAISS", "LangGraph", "Incident Response", "AIOps", "SRE Copilot", "n8n"],
+        "url": "https://github.com/OluwaTossin/autonomous-incident-response-agent"
+      },
+      {
+        "@type": "CreativeWork",
         "name": "AegisTickets - AWS EKS Reliability Platform",
         "description": "Engineered a reliability-focused production system using SLIs, SLOs, error budgets, and golden-signal monitoring to guide autoscaling and operational decisions",
         "genre": "SRE & Observability",
@@ -53,7 +61,7 @@
         "name": "Enterprise AI/ML Platform",
         "description": "Applied SRE principles to AI workloads, implementing observability, alerting, and cost-performance trade-off controls, reducing inference costs by ~60 percent",
         "genre": "AI/ML Engineering",
-        "keywords": ["AI/ML", "SRE", "Observability", "Cost Optimization", "FinOps"]
+        "keywords": ["AI/ML", "SRE", "Observability", "Cost Optimisation", "FinOps"]
       },
       {
         "@type": "CreativeWork",
@@ -95,32 +103,37 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Platform & Cloud Architecture Portfolio",
+    "name": "Cloud & DevOps Engineering Portfolio",
     "url": "https://oluwatossin.github.io/portfolio.html",
     "description": "Comprehensive portfolio of enterprise cloud platforms, DevOps solutions, and compliance frameworks",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Platform Engineering Projects",
-      "numberOfItems": 12,
+      "numberOfItems": 18,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "Autonomous DevOps Incident Response Agent"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "name": "AegisTickets - AWS EKS Reliability Platform"
         },
         {
           "@type": "ListItem", 
-          "position": 2,
+          "position": 3,
           "name": "Enterprise AI/ML Platform"
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 4,
           "name": "Cloud-Native Job Platform"
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 5,
           "name": "AWS Cloud Risk Assessment"
         }
       ]
@@ -325,7 +338,7 @@
     "author": {
       "@type": "Person",
       "name": "Oluwatosin Jegede",
-      "jobTitle": "DevOps Engineer"
+      "jobTitle": "Cloud & DevOps Engineer"
     }
   }
   </script>
@@ -405,6 +418,40 @@
       <div class="container">
         <div id="projectsGrid" class="projects-grid">
 
+          <!-- Autonomous DevOps Incident Response Agent -->
+          <article 
+            id="autonomous-devops-incident-agent"
+            class="panel project-card"
+            data-title="Autonomous DevOps Incident Response Agent: AI-Powered Incident Triage and Diagnosis Engine"
+            data-tags="ai,ml,sre,aiops,rag,faiss,langgraph,incident,monitoring,n8n,llm,http,observability,aws,terraform,cicd,ecs,fastapi"
+          >
+            <div class="project-meta">
+              <i class="fa-solid fa-bolt"></i> AIOps &amp; SRE
+            </div>
+            <h3>Autonomous DevOps Incident Response Agent</h3>
+            <p class="project-description">
+              An <strong>AI-powered incident triage and diagnosis engine</strong> that ingests alert-style JSON and returns structured triage via <strong>FAISS</strong> RAG over runbooks and logs, a <strong>LangGraph</strong> agent with guardrails, and <strong>FastAPI</strong> over HTTP, using <strong>n8n</strong> workflow automation and <strong>Gradio</strong>/<strong>Next.js</strong> UIs. Fuses normalised alerts with retrieved evidence into <strong>recommended_actions</strong>, <strong>escalate</strong>, and <strong>confidence</strong>, in line with <strong>AIOps</strong> and SRE copilot patterns. Runs on <strong>AWS ECS</strong> with <strong>Terraform</strong>, <strong>CloudWatch</strong> observability, and <strong>GitHub Actions</strong> CI/CD, targeting first-response output in <strong>under 30 seconds</strong> wall-clock.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AIOps</span>
+              <span class="tag">RAG</span>
+              <span class="tag">FAISS</span>
+              <span class="tag">LangGraph</span>
+              <span class="tag">Incident Response</span>
+              <span class="tag">SRE</span>
+              <span class="tag">LLM</span>
+              <span class="tag">n8n</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">AWS ECS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">CI/CD</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OluwaTossin/autonomous-incident-response-agent" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              <a href="https://www.linkedin.com/pulse/autonomous-devops-incident-response-agent-oluwatosin-jegede-cwsfe/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn Article</a>
+            </div>
+          </article>
+
           <!-- AegisTickets - AWS EKS Reliability Platform -->
           <article 
             id="aegistickets-eks"
@@ -440,14 +487,14 @@
             id="enterprise-aiml"
             class="panel project-card"
             data-title="Building an Enterprise AI/ML Platform That Actually Works in Production"
-            data-tags="ai,ml,sre,observability,alerting,finops,cost-optimization"
+            data-tags="ai,ml,sre,observability,alerting,finops,cost-optimisation"
           >
             <div class="project-meta">
               <i class="fa-solid fa-robot"></i> AI/ML Platform
             </div>
             <h3>Building an Enterprise AI/ML Platform That Actually Works in Production</h3>
             <p class="project-description">
-              Applied SRE principles to AI workloads, implementing observability, alerting, and cost-performance trade-off controls, reducing inference costs by ~60 percent. Built comprehensive monitoring for AI/ML pipelines with custom metrics, drift detection, and automated scaling based on service level objectives. Integrated FinOps practices to optimize resource utilization and cost efficiency while maintaining model performance and reliability.
+              Applied SRE principles to AI workloads, implementing observability, alerting, and cost-performance trade-off controls, reducing inference costs by ~60 percent. Built comprehensive monitoring for AI/ML pipelines with custom metrics, drift detection, and automated scaling based on service level objectives. Integrated FinOps practices to optimise resource utilisation and cost efficiency while maintaining model performance and reliability.
             </p>
             <div class="project-tags">
               <span class="tag">AI/ML</span>
@@ -455,7 +502,7 @@
               <span class="tag">Observability</span>
               <span class="tag">Alerting</span>
               <span class="tag">FinOps</span>
-              <span class="tag">Cost Optimization</span>
+              <span class="tag">Cost Optimisation</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/OluwaTossin/secure-aiml-ops" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
@@ -465,6 +512,7 @@
 
           <!-- Cloud-Native Job Portal -->
           <article 
+            id="cloud-native-job"
             class="panel project-card"
             data-title="Building a Cloud-Native Job Portal That Actually Works"
             data-tags="aws,health-checks,automated-recovery,zero-downtime,resilience"
@@ -501,7 +549,7 @@
             </div>
             <h3>AWS Cloud Penetration Test</h3>
             <p class="project-description">
-              Conducted comprehensive penetration testing and real-world risk assessment on production-grade AWS infrastructure. Identified critical vulnerabilities across IAM configurations, network security groups, storage permissions, and application layers. Delivered detailed redacted report with prioritized remediation recommendations aligned with industry security standards and AWS best practices.
+              Conducted comprehensive penetration testing and real-world risk assessment on production-grade AWS infrastructure. Identified critical vulnerabilities across IAM configurations, network security groups, storage permissions, and application layers. Delivered detailed redacted report with prioritised remediation recommendations aligned with industry security standards and AWS best practices.
             </p>
             <div class="project-tags">
               <span class="tag">AWS</span>
@@ -644,7 +692,7 @@
             </div>
             <h3>End-to-End DevOps Pipeline with EKS & ELK Stack</h3>
             <p class="project-description">
-              This project implemented a full-stack DevOps solution using GitHub Actions for CI, Terraform for infrastructure automation, and Kubernetes on AWS EKS for orchestration. Dockerized applications were built and deployed with Kubernetes manifests. Logs were centralized using the ELK stack, while Prometheus and Grafana enabled detailed performance monitoring and alerting. Security was reinforced through IAM policies, encrypted storage, and TLS via ACM certificates.
+              This project implemented a full-stack DevOps solution using GitHub Actions for CI, Terraform for infrastructure automation, and Kubernetes on AWS EKS for orchestration. Dockerised applications were built and deployed with Kubernetes manifests. Logs were centralised using the ELK stack, while Prometheus and Grafana enabled detailed performance monitoring and alerting. Security was reinforced through IAM policies, encrypted storage, and TLS via ACM certificates.
             </p>
             <div class="project-tags">
               <span class="tag">AWS</span>
@@ -701,7 +749,7 @@
             </div>
             <h3>Containerized WebApp with CI/CD & Monitoring</h3>
             <p class="project-description">
-              This project involved containerizing a Node.js web app, deploying it using a CI/CD pipeline built with GitHub Actions, and configuring Prometheus and Grafana to provide visibility into app health and performance. The goal was to streamline releases and provide real-time monitoring of container behavior and HTTP requests.
+              This project involved containerising a Node.js web app, deploying it using a CI/CD pipeline built with GitHub Actions, and configuring Prometheus and Grafana to provide visibility into app health and performance. The goal was to streamline releases and provide real-time monitoring of container behaviour and HTTP requests.
             </p>
             <div class="project-tags">
               <span class="tag">Docker</span>
@@ -757,7 +805,7 @@
             </div>
             <h3>Scalable Web App CI/CD with AWS Amplify</h3>
             <p class="project-description">
-              This project centered on building a CI/CD pipeline for a React-based web application. The frontend was deployed using AWS Amplify, and backend logic was handled with AWS Lambda. CodePipeline and CodeBuild automated deployments, and CloudWatch monitored performance metrics and logs.
+              This project centred on building a CI/CD pipeline for a React-based web application. The frontend was deployed using AWS Amplify, and backend logic was handled with AWS Lambda. CodePipeline and CodeBuild automated deployments, and CloudWatch monitored performance metrics and logs.
             </p>
             <div class="project-tags">
               <span class="tag">AWS Amplify</span>
@@ -784,7 +832,7 @@
             </div>
             <h3>Full-Stack Application CI/CD on Google Cloud</h3>
             <p class="project-description">
-              I deployed a full-stack application on GCP using Docker containers, Terraform for infra provisioning, and GitHub Actions for CI/CD. Monitoring and alerting were set up using the Google Cloud Operations Suite, providing clear visibility into deployments and runtime behavior.
+              I deployed a full-stack application on GCP using Docker containers, Terraform for infra provisioning, and GitHub Actions for CI/CD. Monitoring and alerting were set up using the Google Cloud Operations Suite, providing clear visibility into deployments and runtime behaviour.
             </p>
             <div class="project-tags">
               <span class="tag">GCP</span>
@@ -836,7 +884,7 @@
             </div>
             <h3>AWS Infrastructure Compliance Audit System</h3>
             <p class="project-description">
-              This compliance audit system utilized AWS Config to evaluate resource conformance across services. Lambda functions were triggered on non-compliant rules, enabling proactive remediation and alerting via SNS.
+              This compliance audit system utilised AWS Config to evaluate resource conformance across services. Lambda functions were triggered on non-compliant rules, enabling proactive remediation and alerting via SNS.
             </p>
             <div class="project-tags">
               <span class="tag">AWS Config</span>
@@ -861,7 +909,7 @@
             </div>
             <h3>AWS Cloud Security Dashboard</h3>
             <p class="project-description">
-              I designed a web-based dashboard to visualize and monitor key AWS security metrics, including IAM role usage, open security groups, and policy violations, offering centralized oversight for cloud posture management.
+              I designed a web-based dashboard to visualise and monitor key AWS security metrics, including IAM role usage, open security groups, and policy violations, offering centralised oversight for cloud posture management.
             </p>
             <div class="project-tags">
               <span class="tag">AWS</span>
@@ -886,7 +934,7 @@
           <h2><i class="fas fa-rocket"></i> Ready to Build Something Amazing?</h2>
         </div>
         <p>
-          These projects represent real-world solutions that delivered measurable business value. If you're looking to implement similar infrastructure improvements, optimize costs, enhance security, or build reliable platforms, I'd love to discuss how we can work together.
+          These projects represent real-world solutions that delivered measurable business value. If you're looking to implement similar infrastructure improvements, optimise costs, enhance security, or build reliable platforms, I'd love to discuss how we can work together.
         </p>
         <div class="cta" style="justify-content: center; margin-top: 24px;">
           <a class="btn primary" href="mailto:careers.tosinjegede@gmail.com?subject=DevOps%20Project%20Collaboration"><i class="fa-solid fa-paper-plane"></i> Let's Collaborate</a>
@@ -899,7 +947,7 @@
 
   <footer>
     <div class="container small">
-      © 2025 Oluwatosin Jegede. Professional portfolio. 
+      © 2026 Oluwatosin Jegede. Professional portfolio. 
       <span aria-hidden="true">·</span> <a href="about.html">About</a>
       <span aria-hidden="true">·</span> <a href="portfolio.html">Portfolio</a>
       <span aria-hidden="true">·</span> <a href="devops-engineer-london.html">DevOps Engineer in London</a>
@@ -925,7 +973,10 @@
       function matchesFilters(card) {
         const title = (card.getAttribute("data-title") || "").toLowerCase();
         const tags = (card.getAttribute("data-tags") || "").toLowerCase().split(",");
-        const description = card.querySelector(".project-description").textContent.toLowerCase();
+        const description = Array.from(card.querySelectorAll(".project-description"))
+          .map((el) => el.textContent)
+          .join(" ")
+          .toLowerCase();
         const searchableText = (title + " " + tags.join(" ") + " " + description).toLowerCase();
 
         // Text search match
