@@ -36,8 +36,12 @@ jobs:
         run: npm run build
         working-directory: web
 
-      - name: Verify export (projects + legacy /portfolio/ redirect)
-        run: test -f web/out/projects/index.html && test -f web/out/portfolio/index.html
+      - name: Verify export (projects, legacy paths)
+        run: |
+          test -f web/out/projects/index.html
+          test -f web/out/portfolio/index.html
+          test -f web/out/devops-engineer-london.html
+          test -f web/out/devops-engineer-manchester.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
