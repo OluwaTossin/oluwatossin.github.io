@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileDown, Mail } from "lucide-react";
+import { HomeJsonLd } from "@/components/home-json-ld";
 import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 import { getFeaturedProjects } from "@/lib/projects";
 import { email as siteEmail, github as gh, linkedin as li } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const certs = [
   "AWS DevOps Engineer — Professional",
@@ -22,6 +28,7 @@ export default function HomePage() {
 
   return (
     <>
+      <HomeJsonLd />
       <section className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pt-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_320px] lg:items-start lg:gap-16">
           <div className="space-y-8">
