@@ -57,7 +57,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/portfolio/"
+                href="/projects/"
                 className="inline-flex items-center gap-2 rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-600/25 transition hover:bg-teal-500"
               >
                 View portfolio <ArrowRight className="h-4 w-4" />
@@ -145,7 +145,7 @@ export default function HomePage() {
               <p className="mt-2 text-zinc-400">Recent work across AI ops, reliability, and platform engineering.</p>
             </div>
             <Link
-              href="/portfolio/"
+              href="/projects/"
               className="text-sm font-semibold text-teal-400 hover:text-teal-300"
             >
               All projects →
@@ -155,7 +155,7 @@ export default function HomePage() {
             {featuredProjects.map((p) => (
               <Link
                 key={p.id}
-                href={`/portfolio/#${p.id}`}
+                href={`/projects/#${p.id}`}
                 className="card-surface card-surface-hover group flex flex-col gap-3 p-6"
               >
                 <p className="text-xs font-semibold uppercase tracking-wider text-teal-400/90">

@@ -54,7 +54,7 @@ export default function ManchesterPage() {
               Email
             </a>
             <Link
-              href="/portfolio/"
+              href="/projects/"
               className="rounded-xl border border-zinc-600 px-5 py-2.5 text-sm font-semibold text-white hover:border-teal-500/40"
             >
               Portfolio

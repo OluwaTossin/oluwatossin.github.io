@@ -157,7 +157,7 @@ export default function ExperiencePage() {
           LinkedIn
         </a>
         <Link
-          href="/portfolio/"
+          href="/projects/"
           className="rounded-xl border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-teal-500/40"
         >
           Portfolio
