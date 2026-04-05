@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { THEME_STORAGE_KEY } from "@/lib/theme-storage";
 import { name, siteUrl } from "@/lib/site";
+
+const themeInitScript = `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var t=localStorage.getItem(k);if(t!=="light"&&t!=="dark")t="dark";document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,14 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col font-sans`}
       >
-        <div
-          className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(ellipse_90%_60%_at_50%_-25%,rgba(20,184,166,0.14),transparent_55%)]"
-          aria-hidden
-        />
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-page-radial" aria-hidden />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

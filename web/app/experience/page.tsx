@@ -150,8 +150,8 @@ export default function ExperiencePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
-        <h1 className="text-4xl font-bold tracking-tight text-white">Experience</h1>
-        <p className="mt-4 max-w-3xl text-zinc-400">
+        <h1 className="text-4xl font-bold tracking-tight text-fg">Experience</h1>
+        <p className="mt-4 max-w-3xl text-fg-muted">
           Hands-on DevOps and SRE delivery across hybrid AWS and GCP, Kubernetes platforms, Terraform
           infrastructure as code, GitHub Actions and Argo CD GitOps CI/CD, DevSecOps and compliance
           (GDPR, PCI-DSS), observability-led incident response, SRE practices, and FinOps—from secure AWS
@@ -163,19 +163,19 @@ export default function ExperiencePage() {
       <div className="mt-12 space-y-10">
         {roles.map((r) => (
           <article key={r.org} className="card-surface p-6 sm:p-8">
-            <div className="flex flex-col gap-2 border-b border-zinc-800 pb-4 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-col gap-2 border-b border-border pb-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <h2 className="text-xl font-bold text-white">{r.org}</h2>
-                <p className="mt-1 font-medium text-teal-400">{r.title}</p>
+                <h2 className="text-xl font-bold text-fg">{r.org}</h2>
+                <p className="mt-1 font-medium text-accent">{r.title}</p>
               </div>
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm text-fg-faint">
                 {r.period}
                 <br />
                 {r.location}
               </p>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-400">{r.intro}</p>
-            <ul className="mt-4 list-outside list-disc space-y-3 ps-5 text-sm leading-relaxed text-zinc-300">
+            <p className="mt-4 text-sm leading-relaxed text-fg-muted">{r.intro}</p>
+            <ul className="mt-4 list-outside list-disc space-y-3 ps-5 text-sm leading-relaxed text-fg-subtle">
               {r.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}
@@ -184,7 +184,7 @@ export default function ExperiencePage() {
               {r.tags.map((t) => (
                 <span
                   key={t}
-                  className="rounded-md bg-zinc-800/80 px-2 py-0.5 text-xs text-zinc-300"
+                  className="rounded-md bg-tag px-2 py-0.5 text-xs text-fg-subtle"
                 >
                   {t}
                 </span>
@@ -197,7 +197,7 @@ export default function ExperiencePage() {
       <div className="card-surface mt-12 flex flex-col items-center gap-4 p-8 text-center sm:flex-row sm:justify-center">
         <a
           href={`mailto:${email}?subject=DevOps%20%2F%20SRE%20opportunity`}
-          className="rounded-xl bg-teal-600 px-6 py-3 text-sm font-semibold text-white hover:bg-teal-500"
+          className="rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-on-accent shadow-accent-glow hover:bg-accent-hover"
         >
           Email me
         </a>
@@ -205,13 +205,13 @@ export default function ExperiencePage() {
           href={linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-xl border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-teal-500/40"
+          className="rounded-xl border border-border-strong px-6 py-3 text-sm font-semibold text-fg hover:border-accent-border"
         >
           LinkedIn
         </a>
         <Link
           href="/projects/"
-          className="rounded-xl border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-teal-500/40"
+          className="rounded-xl border border-border-strong px-6 py-3 text-sm font-semibold text-fg hover:border-accent-border"
         >
           Portfolio
         </Link>

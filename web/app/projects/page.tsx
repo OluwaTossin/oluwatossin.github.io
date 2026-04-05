@@ -12,8 +12,8 @@ export default function PortfolioPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-10 max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-white">Portfolio</h1>
-        <p className="mt-4 max-w-3xl text-zinc-400 leading-relaxed">
+        <h1 className="text-4xl font-bold tracking-tight text-fg">Portfolio</h1>
+        <p className="mt-4 max-w-3xl text-fg-muted leading-relaxed">
           Detailed case studies across production AWS and GCP platforms: Kubernetes (EKS), Terraform
           infrastructure as code, GitHub Actions and Jenkins CI/CD, observability and SRE, DevSecOps and
           compliance, ML operations, and automation. Use search and stack filters to narrow results—each

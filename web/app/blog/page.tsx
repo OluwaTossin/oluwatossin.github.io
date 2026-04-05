@@ -84,14 +84,14 @@ const posts: {
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold tracking-tight text-white">Blog &amp; articles</h1>
-      <p className="mt-4 max-w-3xl leading-relaxed text-zinc-400">
+      <h1 className="text-4xl font-bold tracking-tight text-fg">Blog &amp; articles</h1>
+      <p className="mt-4 max-w-3xl leading-relaxed text-fg-muted">
         Long-form engineering writing across{" "}
         <a
           href="https://www.linkedin.com/in/oluwatosinjegede/recent-activity/articles/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-400 hover:text-teal-300"
+          className="text-accent hover:text-accent-hover"
         >
           LinkedIn
         </a>
@@ -100,7 +100,7 @@ export default function BlogPage() {
           href="https://blog.avinteli.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-400 hover:text-teal-300"
+          className="text-accent hover:text-accent-hover"
         >
           Avinteli
         </a>{" "}
@@ -109,7 +109,7 @@ export default function BlogPage() {
           href="https://www.truefoundry.com/blog"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-400 hover:text-teal-300"
+          className="text-accent hover:text-accent-hover"
         >
           TrueFoundry
         </a>{" "}
@@ -126,13 +126,13 @@ export default function BlogPage() {
               className="card-surface card-surface-hover flex flex-col gap-3 p-6 sm:flex-row sm:items-start sm:justify-between"
             >
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal-400/90">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                   {post.publisher}
                 </p>
-                <h2 className="mt-1 text-lg font-semibold text-white">{post.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{post.summary}</p>
+                <h2 className="mt-1 text-lg font-semibold text-fg">{post.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-fg-muted">{post.summary}</p>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-teal-400 sm:self-center">
+              <span className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-accent sm:self-center">
                 Read <ArrowUpRight className="h-4 w-4" aria-hidden />
               </span>
             </a>
@@ -140,8 +140,8 @@ export default function BlogPage() {
         ))}
       </ul>
 
-      <p className="mt-10 text-center text-sm text-zinc-500">
-        <Link href="/" className="text-teal-400 hover:text-teal-300">
+      <p className="mt-10 text-center text-sm text-fg-faint">
+        <Link href="/" className="text-accent hover:text-accent-hover">
           ← Home
         </Link>
       </p>
