@@ -96,7 +96,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
             <h2 className="text-lg font-semibold tracking-tight text-white">{p.title}</h2>
             <p className="flex-1 text-sm leading-relaxed text-zinc-400">{p.description}</p>
             <div className="flex flex-wrap gap-2">
-              {p.tags.slice(0, 6).map((t) => (
+              {p.tags.slice(0, 12).map((t) => (
                 <span
                   key={t}
                   className="rounded-md bg-zinc-800/80 px-2 py-0.5 text-xs text-zinc-300"

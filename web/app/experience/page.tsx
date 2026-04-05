@@ -5,7 +5,7 @@ import { email, linkedin } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Professional experience — Netsible Solutions, Help.NGO, Sovereign Technology, Afren.ai, independent cloud work.",
+    "DevOps & SRE experience: hybrid AWS/GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, DevSecOps (Trivy, Checkov), PCI-DSS, GDPR, FinOps, AIOps—Netsible, Help.NGO, Sovereign fintech, Afren.ai, and independent delivery.",
 };
 
 type Role = {
@@ -25,15 +25,28 @@ const roles: Role[] = [
     period: "September 2025 – Present",
     location: "Remote / London, UK",
     intro:
-      "DevOps and SRE across hybrid AWS/GCP: resilience, GitOps-style deployments, DevSecOps guardrails, and observability-led incident response.",
+      "DevOps and SRE delivery across hybrid AWS/GCP environments: platform resilience, GitOps-style deployments, DevSecOps guardrails, and observability-led incident response for global client operations.",
     bullets: [
-      "Hybrid AWS/GCP architecture for global clients; improved resilience and ~35% latency reduction for distributed users.",
-      "CI/CD with GitHub Actions and Argo CD; ~99.9% automated deployment success across prod and staging.",
-      "DevSecOps with Trivy and Checkov; GDPR-aligned controls; ~50% reduction in critical security findings.",
-      "Self-healing Kubernetes with Prometheus/Grafana; ~40% lower MTTR for infrastructure incidents.",
-      "AI-assisted tooling for logs and triage; stronger RCA and ~25% productivity gains.",
+      "Architected and optimised high-availability hybrid cloud infrastructure (AWS/GCP) for global client operations, improving system resilience and reducing latency by ~35% for distributed end-users.",
+      "Spearheaded modernisation of CI/CD workflows using GitHub Actions and Argo CD, achieving ~99.9% success rate for automated deployments across production and staging.",
+      "Implemented a DevSecOps framework aligned with financial and data privacy standards (GDPR), integrating automated vulnerability scanning (Trivy, Checkov) that reduced critical security risks by ~50%.",
+      "Engineered a self-healing Kubernetes platform with custom Prometheus/Grafana monitoring and alerting rules, cutting mean time to recovery (MTTR) for infrastructure incidents by ~40%.",
+      "Pioneered AI-assisted operational tools for log analysis and incident triage, streamlining root cause analysis and enhancing team productivity by ~25%.",
     ],
-    tags: ["AWS", "GCP", "Kubernetes", "Terraform", "Argo CD", "Prometheus", "SRE"],
+    tags: [
+      "AWS",
+      "GCP",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "Argo CD",
+      "Prometheus",
+      "Grafana",
+      "Trivy",
+      "Checkov",
+      "DevSecOps",
+      "SRE",
+    ],
   },
   {
     org: "Help.NGO (Humanitarian OpenStreetMap Team)",
@@ -41,69 +54,109 @@ const roles: Role[] = [
     period: "December 2023 – Present",
     location: "Remote, Poland",
     intro:
-      "Secure, compliant AWS for humanitarian mapping—Terraform standards, GitHub Actions, and GDPR-aware observability.",
+      "Advised on secure, compliant, and resilient AWS environments supporting humanitarian mapping operations, with emphasis on data protection and operational continuity in sensitive contexts.",
     bullets: [
-      "Secure AWS patterns for field and mapping workloads.",
-      "Terraform IaC standardisation and GitHub Actions automation.",
-      "Observability and data-protection aligned with GDPR and humanitarian practice.",
-      "Documentation and risk analysis for sensitive deployments.",
+      "Advised on secure AWS environments for humanitarian operations, ensuring data protection and operational continuity in sensitive contexts.",
+      "Guided teams on Terraform-driven infrastructure-as-code standardisation and GitHub Actions automation for consistent, repeatable deployments.",
+      "Strengthened observability and data-protection frameworks aligned with GDPR and humanitarian standards.",
+      "Supported documentation and risk analysis for cloud deployments in high-stakes operational environments.",
     ],
-    tags: ["AWS", "Terraform", "GitHub Actions", "GDPR"],
+    tags: ["AWS", "Terraform", "GitHub Actions", "Observability", "GDPR", "Humanitarian Tech"],
   },
   {
     org: "Sovereign Technology & Innovation Limited",
     title: "DevOps Engineer",
     period: "August 2024 – July 2025",
     location: "Hybrid",
-    intro: "Production fintech platform on AWS—EKS, Istio, policy-as-code, and FinOps.",
+    intro:
+      "Architected and operated a production-grade financial services platform on AWS, designed for resilience, automation, and PCI-DSS–aligned controls.",
     bullets: [
-      "Multi-node EKS with Istio; secure networking and autoscaling; 99.95% uptime target.",
-      "Terraform modules and GitHub Actions for blue/green style delivery.",
-      "Prometheus, Grafana, and CloudWatch; MTTR from 45 minutes to under 15 minutes.",
-      "Checkov, OPA, AWS Config for PCI-DSS aligned compliance.",
-      "FinOps dashboards and Cost Explorer APIs; ~30% Opex reduction.",
+      "Designed multi-node Amazon EKS clusters with secure networking, autoscaling, and Istio-based service mesh to sustain ~99.95% uptime targets.",
+      "Built Terraform modules and GitHub Actions pipelines enabling consistent, repeatable deployments across blue/green style environments.",
+      "Implemented Checkov, OPA, and AWS Config for policy-as-code validation and continuous compliance, supporting PCI-DSS requirements.",
+      "Delivered FinOps dashboards and cost analysis tooling using AWS Lambda and Cost Explorer APIs, reducing operational expenditure by ~30%.",
+      "Implemented observability baselines using Prometheus, Grafana, and Amazon CloudWatch, improving incident visibility and reducing MTTR from ~45 minutes to under 15 minutes.",
     ],
-    tags: ["AWS", "EKS", "Istio", "Terraform", "PCI-DSS", "FinOps"],
+    tags: [
+      "AWS",
+      "EKS",
+      "Terraform",
+      "Istio",
+      "Prometheus",
+      "Grafana",
+      "GitHub Actions",
+      "PCI-DSS",
+      "DevSecOps",
+      "FinOps",
+    ],
   },
   {
     org: "Afren.ai",
     title: "DevOps Engineer",
     period: "December 2022 – July 2024",
     location: "Remote",
-    intro: "Platform reliability and automation on AWS for internal distributed services.",
+    intro:
+      "Strengthened platform reliability and automated cloud operations across AWS for distributed internal services, with a focus on observability, playbooks, and hardened Linux and container estates.",
     bullets: [
-      "CI/CD and IaC; ~60% less manual provisioning work.",
-      "Modular Terraform to remove drift and standardise environments.",
-      "CloudWatch golden signals and log pipelines; ~45% reliability improvement.",
-      "Alerting and playbooks; ~40% lower MTTR.",
-      "Hardened Linux and container hosts across EC2 and Kubernetes nodes.",
+      "Automated builds, deployments, and environment provisioning using CI/CD pipelines and infrastructure as code, reducing manual effort by ~60%.",
+      "Rebuilt infrastructure into modular Terraform platform components, eliminating configuration drift and enabling consistent environment creation.",
+      "Delivered CloudWatch dashboards, golden-signal metrics, and centralised log pipelines, improving service visibility and operational reliability by ~45%.",
+      "Enhanced alerting, incident response, and troubleshooting workflows, cutting MTTR by ~40% and standardising recovery playbooks.",
+      "Operated and hardened Linux-based production environments across EC2 instances and Kubernetes container hosts.",
     ],
-    tags: ["AWS", "Terraform", "CloudWatch", "DevSecOps"],
+    tags: [
+      "AWS",
+      "Terraform",
+      "GitHub Actions",
+      "CloudWatch",
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "DevSecOps",
+      "SRE",
+    ],
   },
   {
     org: "Independent Cloud Architect & DevOps",
     title: "Contract engagements",
     period: "May 2021 – Present",
     location: "UK & international clients",
-    intro: "Fintech, healthtech, and enterprise automation, reliability, and governance.",
+    intro:
+      "Delivered cloud architecture and automation across fintech, healthtech, and enterprise projects—multi-cloud reliability, GitOps frameworks, DevSecOps pipelines, and FinOps savings.",
     bullets: [
-      "Multi-cloud HA designs; ~99.9% uptime outcomes.",
-      "Terraform and Argo CD frameworks; ~60% faster provisioning.",
-      "DevSecOps pipelines with scanning, drift detection, and automated rollback.",
-      "FinOps savings around £3K–£5K/month for clients.",
+      "Designed multi-cloud, highly available workloads using load balancing, autoscaling, and replication strategies achieving ~99.9% uptime outcomes.",
+      "Built internal Terraform and Argo CD frameworks that reduced provisioning time by ~60%.",
+      "Implemented DevSecOps pipelines with vulnerability scanning, drift detection, and automated rollback logic.",
+      "Introduced FinOps cost optimisation workflows saving clients approximately £3,000–£5,000 per month.",
     ],
-    tags: ["AWS", "GCP", "Argo CD", "FinOps", "DevSecOps"],
+    tags: [
+      "AWS",
+      "GCP",
+      "EKS",
+      "GKE",
+      "Terraform",
+      "Argo CD",
+      "Prometheus",
+      "Grafana",
+      "Checkov",
+      "Snyk",
+      "FinOps",
+      "DevSecOps",
+    ],
   },
 ];
 
 export default function ExperiencePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
+      <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
         <h1 className="text-4xl font-bold tracking-tight text-white">Experience</h1>
-        <p className="mt-4 text-zinc-400">
-          Hybrid AWS/GCP platforms, humanitarian advisory, fintech production systems, and
-          independent multi-cloud delivery—with Terraform, Kubernetes, SRE, and DevSecOps.
+        <p className="mt-4 max-w-3xl text-zinc-400">
+          Hands-on DevOps and SRE delivery across hybrid AWS and GCP, Kubernetes platforms, Terraform
+          infrastructure as code, GitHub Actions and Argo CD GitOps CI/CD, DevSecOps and compliance
+          (GDPR, PCI-DSS), observability-led incident response, SRE practices, and FinOps—from secure AWS
+          advisory for humanitarian mapping through production fintech on Amazon EKS with Istio to
+          independent multi-cloud architecture for fintech, healthtech, and enterprise clients.
         </p>
       </div>
 
@@ -121,8 +174,8 @@ export default function ExperiencePage() {
                 {r.location}
               </p>
             </div>
-            <p className="mt-4 text-sm text-zinc-400">{r.intro}</p>
-            <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-zinc-300">
+            <p className="mt-4 text-sm leading-relaxed text-zinc-400">{r.intro}</p>
+            <ul className="mt-4 list-outside list-disc space-y-3 ps-5 text-sm leading-relaxed text-zinc-300">
               {r.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}

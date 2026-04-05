@@ -164,7 +164,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-white group-hover:text-teal-200">
                   {p.title}
                 </h3>
-                <p className="flex-1 text-sm text-zinc-400 line-clamp-4">{p.description}</p>
+                <p className="flex-1 text-sm leading-relaxed text-zinc-400 line-clamp-6">{p.description}</p>
                 <span className="text-sm font-medium text-teal-400">Case study →</span>
               </Link>
             ))}
