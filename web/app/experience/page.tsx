@@ -5,7 +5,7 @@ import { email, linkedin } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Senior DevOps & SRE experience: hybrid AWS/GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, DevSecOps (Trivy, Checkov), PCI-DSS, GDPR, FinOps, AIOps—Netsible, Help.NGO, Sovereign fintech, Afren.ai, and independent delivery.",
+    "DevOps & SRE experience: hybrid AWS/GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, DevSecOps (Trivy, Checkov), PCI-DSS, GDPR, FinOps, AIOps—Netsible, Help.NGO (cloud infrastructure advisory), Sovereign fintech, Afren.ai, and independent delivery.",
 };
 
 type Role = {
@@ -50,11 +50,11 @@ const roles: Role[] = [
   },
   {
     org: "Help.NGO (Humanitarian OpenStreetMap Team)",
-    title: "Senior DevOps Engineer (Advisory)",
+    title: "Cloud Infrastructure Advisor",
     period: "December 2023 – Present",
     location: "Remote, Poland",
     intro:
-      "Senior advisory on secure, compliant, and resilient AWS environments supporting humanitarian mapping operations, with emphasis on data protection and operational continuity in sensitive contexts.",
+      "Advised on secure, compliant, and resilient AWS environments supporting humanitarian mapping operations, with emphasis on data protection and operational continuity in sensitive contexts.",
     bullets: [
       "Advised on secure AWS environments for humanitarian operations, ensuring data protection and operational continuity in sensitive contexts.",
       "Guided teams on Terraform-driven infrastructure-as-code standardisation and GitHub Actions automation for consistent, repeatable deployments.",
@@ -92,11 +92,11 @@ const roles: Role[] = [
   },
   {
     org: "Afren.ai",
-    title: "Senior DevOps Engineer",
+    title: "DevOps Engineer",
     period: "December 2022 – July 2024",
     location: "Remote",
     intro:
-      "Senior engineer strengthening platform reliability and automated cloud operations across AWS for distributed internal services, with a focus on observability, playbooks, and hardened Linux and container estates.",
+      "Strengthened platform reliability and automated cloud operations across AWS for distributed internal services, with a focus on observability, playbooks, and hardened Linux and container estates.",
     bullets: [
       "Automated builds, deployments, and environment provisioning using CI/CD pipelines and infrastructure as code, reducing manual effort by ~60%.",
       "Rebuilt infrastructure into modular Terraform platform components, eliminating configuration drift and enabling consistent environment creation.",
