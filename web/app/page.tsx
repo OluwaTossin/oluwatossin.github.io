@@ -36,7 +36,7 @@ export default function HomePage() {
               Secure · Scalable · Observable
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-fg sm:text-5xl lg:text-[2.75rem] lg:leading-tight">
-              Cloud &amp; DevOps Engineer —{" "}
+              Senior Cloud &amp; DevOps Engineer —{" "}
               <span className="text-gradient">AWS</span> · GCP · Terraform · Kubernetes · SRE ·
               DevSecOps
             </h1>

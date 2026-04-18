@@ -19,7 +19,17 @@ This website serves as an online resume and portfolio, highlighting my professio
 - Dedicated pages for experience, portfolio, and resume
 - SEO-friendly structure (robots.txt, sitemap.xml)
 - Social media integration
-- Downloadable resume
+- Downloadable resume (`resume.pdf` at repo root and `web/public/resume.pdf` for the Next export)
+
+## Regenerate `resume.pdf`
+The CV is generated with [ReportLab](https://www.reportlab.com/) so it stays version-controlled without a Word/LaTeX binary:
+
+```sh
+pip install -r scripts/requirements.txt
+python3 scripts/generate_resume.py
+```
+
+That writes both `resume.pdf` (repo root) and `web/public/resume.pdf` (served at `/resume.pdf` on GitHub Pages).
 
 ## Getting Started
 To view or modify the website locally:

@@ -5,7 +5,7 @@ import { email, linkedin } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "DevOps & SRE experience: hybrid AWS/GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, DevSecOps (Trivy, Checkov), PCI-DSS, GDPR, FinOps, AIOps—Netsible, Help.NGO, Sovereign fintech, Afren.ai, and independent delivery.",
+    "Senior DevOps & SRE experience: hybrid AWS/GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, DevSecOps (Trivy, Checkov), PCI-DSS, GDPR, FinOps, AIOps—Netsible, Help.NGO, Sovereign fintech, Afren.ai, and independent delivery.",
 };
 
 type Role = {
@@ -21,11 +21,11 @@ type Role = {
 const roles: Role[] = [
   {
     org: "Netsible Solutions",
-    title: "DevOps & SRE Engineer",
+    title: "Senior DevOps & SRE Engineer",
     period: "September 2025 – Present",
     location: "Remote / London, UK",
     intro:
-      "DevOps and SRE delivery across hybrid AWS/GCP environments: platform resilience, GitOps-style deployments, DevSecOps guardrails, and observability-led incident response for global client operations.",
+      "Senior DevOps and SRE delivery across hybrid AWS/GCP environments: platform resilience, GitOps-style deployments, DevSecOps guardrails, and observability-led incident response for global client operations.",
     bullets: [
       "Architected and optimised high-availability hybrid cloud infrastructure (AWS/GCP) for global client operations, improving system resilience and reducing latency by ~35% for distributed end-users.",
       "Spearheaded modernisation of CI/CD workflows using GitHub Actions and Argo CD, achieving ~99.9% success rate for automated deployments across production and staging.",
@@ -50,11 +50,11 @@ const roles: Role[] = [
   },
   {
     org: "Help.NGO (Humanitarian OpenStreetMap Team)",
-    title: "DevOps Engineer",
+    title: "Senior DevOps Engineer (Advisory)",
     period: "December 2023 – Present",
     location: "Remote, Poland",
     intro:
-      "Advised on secure, compliant, and resilient AWS environments supporting humanitarian mapping operations, with emphasis on data protection and operational continuity in sensitive contexts.",
+      "Senior advisory on secure, compliant, and resilient AWS environments supporting humanitarian mapping operations, with emphasis on data protection and operational continuity in sensitive contexts.",
     bullets: [
       "Advised on secure AWS environments for humanitarian operations, ensuring data protection and operational continuity in sensitive contexts.",
       "Guided teams on Terraform-driven infrastructure-as-code standardisation and GitHub Actions automation for consistent, repeatable deployments.",
@@ -65,11 +65,11 @@ const roles: Role[] = [
   },
   {
     org: "Sovereign Technology & Innovation Limited",
-    title: "DevOps Engineer",
+    title: "Senior DevOps Engineer",
     period: "August 2024 – July 2025",
     location: "Hybrid",
     intro:
-      "Architected and operated a production-grade financial services platform on AWS, designed for resilience, automation, and PCI-DSS–aligned controls.",
+      "Senior engineer architecting and operating a production-grade financial services platform on AWS, designed for resilience, automation, and PCI-DSS–aligned controls.",
     bullets: [
       "Designed multi-node Amazon EKS clusters with secure networking, autoscaling, and Istio-based service mesh to sustain ~99.95% uptime targets.",
       "Built Terraform modules and GitHub Actions pipelines enabling consistent, repeatable deployments across blue/green style environments.",
@@ -92,11 +92,11 @@ const roles: Role[] = [
   },
   {
     org: "Afren.ai",
-    title: "DevOps Engineer",
+    title: "Senior DevOps Engineer",
     period: "December 2022 – July 2024",
     location: "Remote",
     intro:
-      "Strengthened platform reliability and automated cloud operations across AWS for distributed internal services, with a focus on observability, playbooks, and hardened Linux and container estates.",
+      "Senior engineer strengthening platform reliability and automated cloud operations across AWS for distributed internal services, with a focus on observability, playbooks, and hardened Linux and container estates.",
     bullets: [
       "Automated builds, deployments, and environment provisioning using CI/CD pipelines and infrastructure as code, reducing manual effort by ~60%.",
       "Rebuilt infrastructure into modular Terraform platform components, eliminating configuration drift and enabling consistent environment creation.",
@@ -118,11 +118,11 @@ const roles: Role[] = [
   },
   {
     org: "Independent Cloud Architect & DevOps",
-    title: "Contract engagements",
+    title: "Senior Cloud Architect & DevOps (Contract)",
     period: "May 2021 – Present",
     location: "UK & international clients",
     intro:
-      "Delivered cloud architecture and automation across fintech, healthtech, and enterprise projects—multi-cloud reliability, GitOps frameworks, DevSecOps pipelines, and FinOps savings.",
+      "Senior-level cloud architecture and automation across fintech, healthtech, and enterprise projects—multi-cloud reliability, GitOps frameworks, DevSecOps pipelines, and FinOps savings.",
     bullets: [
       "Designed multi-cloud, highly available workloads using load balancing, autoscaling, and replication strategies achieving ~99.9% uptime outcomes.",
       "Built internal Terraform and Argo CD frameworks that reduced provisioning time by ~60%.",

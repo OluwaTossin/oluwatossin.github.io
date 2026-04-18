@@ -1,7 +1,7 @@
 import { github, linkedin, name, siteUrl } from "@/lib/site";
 
 const description =
-  "Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and AI-assisted engineering. Based in Chester, UK.";
+  "Senior Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and AI-assisted engineering. Based in Chester, UK.";
 
 export function HomeJsonLd() {
   const data = {
@@ -11,7 +11,7 @@ export function HomeJsonLd() {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: `${siteUrl}/`,
-        name: `${name} · Cloud & DevOps Engineer`,
+        name: `${name} · Senior Cloud & DevOps Engineer`,
         description,
         publisher: { "@id": `${siteUrl}/#person` },
         inLanguage: "en-GB",
@@ -22,7 +22,7 @@ export function HomeJsonLd() {
         name,
         url: `${siteUrl}/`,
         image: `${siteUrl}/images/profile.jpg`,
-        jobTitle: "Cloud & DevOps Engineer",
+        jobTitle: "Senior Cloud & DevOps Engineer",
         description,
         sameAs: [linkedin, github],
         knowsAbout: [

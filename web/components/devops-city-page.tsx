@@ -106,12 +106,12 @@ export function DevopsCityPage({ config }: { config: DevopsCityConfig }) {
             <h1 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl lg:text-[2.35rem] lg:leading-tight">
               {config.slug === "london" ? (
                 <>
-                  Cloud &amp; DevOps Engineer —{" "}
+                  Senior Cloud &amp; DevOps Engineer —{" "}
                   <span className="text-gradient">London</span>
                 </>
               ) : (
                 <>
-                  Cloud &amp; DevOps Engineer —{" "}
+                  Senior Cloud &amp; DevOps Engineer —{" "}
                   <span className="text-gradient">Manchester</span>
                   <span className="text-fg-subtle"> / UK</span>
                 </>
@@ -121,10 +121,10 @@ export function DevopsCityPage({ config }: { config: DevopsCityConfig }) {
               AWS · GCP · Kubernetes · Terraform · SRE · DevSecOps · GitOps
             </p>
             <p className="leading-relaxed text-fg-muted">
-              I am a Cloud &amp; DevOps Engineer with 5+ years designing and operating production-grade
+              I am a Senior Cloud &amp; DevOps Engineer with 5+ years designing and operating production-grade
               platforms. I am currently{" "}
               <strong className="font-medium text-fg-subtle">
-                DevOps &amp; SRE Engineer at Netsible Solutions
+                Senior DevOps &amp; SRE Engineer at Netsible Solutions
               </strong>
               , delivering hybrid AWS/GCP infrastructure, GitHub Actions and Argo CD pipelines, and
               observability-led reliability for client estates.

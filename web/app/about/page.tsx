@@ -5,7 +5,7 @@ import { email, linkedin } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Oluwatosin Jegede — Cloud & DevOps Engineer, SRE, DevSecOps, AWS and GCP.",
+    "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer, SRE, DevSecOps, AWS and GCP.",
 };
 
 const capabilities = [
@@ -51,12 +51,12 @@ export default function AboutPage() {
         <div className="space-y-8">
           <h1 className="text-4xl font-bold tracking-tight text-fg">About</h1>
           <p className="text-lg font-medium text-accent-muted">
-            Cloud &amp; DevOps Engineer · SRE &amp; observability · DevSecOps · Google Professional
+            Senior Cloud &amp; DevOps Engineer · SRE &amp; observability · DevSecOps · Google Professional
             Cloud Architect · AWS Certified DevOps Engineer — Professional
           </p>
           <div className="space-y-4 text-fg-muted leading-relaxed">
             <p>
-              I am a Cloud &amp; DevOps Engineer specialising in the design, automation, and
+              I am a Senior Cloud &amp; DevOps Engineer specialising in the design, automation, and
               governance of production-grade platforms across AWS and GCP. I build resilient systems
               with Terraform, Kubernetes, and CI/CD pipelines built for scale, security, and clear
               operations.

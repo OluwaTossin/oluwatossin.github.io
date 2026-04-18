@@ -92,15 +92,16 @@ const baseKnowsAbout = [
 export const londonConfig: DevopsCityConfig = {
   slug: "london",
   path: "/devops-engineer-london/",
-  h1: "Cloud & DevOps Engineer — London",
+  h1: "Senior Cloud & DevOps Engineer — London",
   heroLocationPill: "London & UK-wide · Hybrid and remote",
   geoRegion: "GB-LND",
   geoPlacename: "London, United Kingdom",
   metadata: {
-    title: "Cloud & DevOps Engineer — London",
+    title: "Senior Cloud & DevOps Engineer — London",
     description:
-      "Oluwatosin Jegede — Cloud & DevOps / SRE engineer for London and UK-wide roles. AWS, GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, observability, PCI-DSS and GDPR-aware platforms. DevOps & SRE at Netsible Solutions; fintech EKS/Istio, enterprise scale, multi-region resilience.",
+      "Oluwatosin Jegede — Senior Cloud & DevOps / SRE engineer for London and UK-wide roles. AWS, GCP, Kubernetes, Terraform, GitHub Actions, Argo CD, observability, PCI-DSS and GDPR-aware platforms. Senior DevOps & SRE at Netsible Solutions; fintech EKS/Istio, enterprise scale, multi-region resilience.",
     keywords: [
+      "Senior DevOps Engineer London",
       "DevOps Engineer London",
       "Platform Engineer London",
       "SRE London",
@@ -116,7 +117,7 @@ export const londonConfig: DevopsCityConfig = {
       canonical: `${siteUrl}/devops-engineer-london/`,
     },
     openGraph: {
-      title: `${name} · Cloud & DevOps Engineer — London`,
+      title: `${name} · Senior Cloud & DevOps Engineer — London`,
       description:
         "Production AWS/GCP platforms, Kubernetes, Terraform, SRE, and DevSecOps for London teams and UK-wide remote.",
       url: `${siteUrl}/devops-engineer-london/`,
@@ -194,22 +195,23 @@ export const londonConfig: DevopsCityConfig = {
   travelNote:
     "Based in Chester, UK; comfortable with London hybrid cadence and UK-wide remote. Direct rail links to London for on-site days when needed.",
   jsonLdDescription:
-    "Cloud & DevOps Engineer with 5+ years on production AWS/GCP, Kubernetes, Terraform, SRE, and DevSecOps. DevOps & SRE Engineer at Netsible Solutions; open to London and UK-wide roles.",
+    "Senior Cloud & DevOps Engineer with 5+ years on production AWS/GCP, Kubernetes, Terraform, SRE, and DevSecOps. Senior DevOps & SRE Engineer at Netsible Solutions; open to London and UK-wide roles.",
   knowsAbout: [...baseKnowsAbout, "Financial Services Technology", "FinOps", "MLOps"],
 };
 
 export const manchesterConfig: DevopsCityConfig = {
   slug: "manchester",
   path: "/devops-engineer-manchester/",
-  h1: "Cloud & DevOps Engineer — Manchester / UK",
+  h1: "Senior Cloud & DevOps Engineer — Manchester / UK",
   heroLocationPill: "Greater Manchester & UK-wide · Hybrid and remote",
   geoRegion: "GB-MAN",
   geoPlacename: "Manchester, United Kingdom",
   metadata: {
-    title: "Cloud & DevOps Engineer — Manchester / UK",
+    title: "Senior Cloud & DevOps Engineer — Manchester / UK",
     description:
-      "Oluwatosin Jegede — Cloud & DevOps / SRE engineer for Manchester, Greater Manchester, and UK-wide roles. AWS, GCP, Kubernetes, Terraform, CI/CD, observability, and DevSecOps. Experience across fintech platforms, scale-ups, and multi-region delivery; currently DevOps & SRE at Netsible Solutions.",
+      "Oluwatosin Jegede — Senior Cloud & DevOps / SRE engineer for Manchester, Greater Manchester, and UK-wide roles. AWS, GCP, Kubernetes, Terraform, CI/CD, observability, and DevSecOps. Experience across fintech platforms, scale-ups, and multi-region delivery; currently Senior DevOps & SRE at Netsible Solutions.",
     keywords: [
+      "Senior DevOps Engineer Manchester",
       "DevOps Engineer Manchester",
       "Platform Engineer Manchester",
       "SRE Manchester",
@@ -224,7 +226,7 @@ export const manchesterConfig: DevopsCityConfig = {
       canonical: `${siteUrl}/devops-engineer-manchester/`,
     },
     openGraph: {
-      title: `${name} · Cloud & DevOps Engineer — Manchester / UK`,
+      title: `${name} · Senior Cloud & DevOps Engineer — Manchester / UK`,
       description:
         "AWS/GCP, Kubernetes, Terraform, GitOps, and observability for Manchester teams and UK remote.",
       url: `${siteUrl}/devops-engineer-manchester/`,
@@ -302,7 +304,7 @@ export const manchesterConfig: DevopsCityConfig = {
   travelNote:
     "Based in Chester, UK; regular travel to Manchester is straightforward by rail for hybrid teams.",
   jsonLdDescription:
-    "Cloud & DevOps Engineer with 5+ years on production AWS/GCP, Kubernetes, Terraform, SRE, and DevSecOps. DevOps & SRE Engineer at Netsible Solutions; open to Manchester and UK-wide roles.",
+    "Senior Cloud & DevOps Engineer with 5+ years on production AWS/GCP, Kubernetes, Terraform, SRE, and DevSecOps. Senior DevOps & SRE Engineer at Netsible Solutions; open to Manchester and UK-wide roles.",
   knowsAbout: [...baseKnowsAbout, "MLOps", "Startup Scaling", "FinOps"],
 };
 
@@ -314,7 +316,7 @@ export function buildPersonJsonLd(config: DevopsCityConfig) {
     name,
     url: pageUrl,
     image: `${siteUrl}/images/profile.jpg`,
-    jobTitle: "Cloud & DevOps Engineer",
+    jobTitle: "Senior Cloud & DevOps Engineer",
     description: config.jsonLdDescription,
     worksFor: {
       "@type": "Organization",

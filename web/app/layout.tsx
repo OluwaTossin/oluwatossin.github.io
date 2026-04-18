@@ -22,11 +22,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${name} · Cloud & DevOps Engineer`,
+    default: `${name} · Senior Cloud & DevOps Engineer`,
     template: `%s · ${name}`,
   },
   description:
-    "Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and AI-assisted engineering. Based in Chester, UK.",
+    "Senior Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and AI-assisted engineering. Based in Chester, UK.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${name} · Cloud & DevOps Engineer`,
+    title: `${name} · Senior Cloud & DevOps Engineer`,
     description:
       "Production-grade cloud platforms, Terraform, Kubernetes, SRE, and DevSecOps across AWS and GCP.",
     images: ["/images/meta-preview.jpg"],
