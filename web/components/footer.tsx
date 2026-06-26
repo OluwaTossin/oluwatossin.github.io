@@ -13,8 +13,14 @@ export function Footer() {
             <Link href="/about/" className="text-fg-muted hover:text-accent">
               About
             </Link>
+            <Link href="/experience/" className="text-fg-muted hover:text-accent">
+              Experience
+            </Link>
             <Link href="/projects/" className="text-fg-muted hover:text-accent">
               Portfolio
+            </Link>
+            <Link href="/blog/" className="text-fg-muted hover:text-accent">
+              Blog
             </Link>
             <Link href="/devops-engineer-london/" className="text-fg-muted hover:text-accent">
               DevOps — London

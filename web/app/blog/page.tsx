@@ -3,9 +3,21 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog & Articles",
   description:
     "Articles on AWS FinOps, DevOps practice, SRE runbooks, DevSecOps automation, OIDC CI/CD, Control Tower governance, and AI engineering workflows — LinkedIn, Avinteli, and TrueFoundry.",
+  alternates: { canonical: "/blog/" },
+  openGraph: {
+    title: "Blog & Articles · Cloud, DevOps & SRE",
+    description:
+      "Engineering articles on FinOps, SRE, DevSecOps, Terraform, and AI platform engineering.",
+    url: "/blog/",
+  },
+  twitter: {
+    title: "Blog & Articles · Cloud, DevOps & SRE",
+    description:
+      "Engineering articles on FinOps, SRE, DevSecOps, Terraform, and AI platform engineering.",
+  },
 };
 
 type Publisher = "LinkedIn" | "Avinteli" | "TrueFoundry";
@@ -113,10 +125,48 @@ export default function BlogPage() {
         >
           TrueFoundry
         </a>{" "}
-        (AI platform engineering). Each card opens the canonical article on the publisher site.
+        (AI platform engineering). Each card opens the canonical article on the publisher site. See also{" "}
+        <Link href="/experience/" className="text-accent hover:text-accent-hover">
+          experience
+        </Link>{" "}
+        and{" "}
+        <Link href="/projects/" className="text-accent hover:text-accent-hover">
+          portfolio case studies
+        </Link>
+        .
       </p>
 
-      <ul className="mt-12 space-y-4">
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-fg">On this site</h2>
+        <ul className="mt-4 space-y-4">
+          <li>
+            <Link
+              href="/article-terraform-best-practices.html"
+              className="card-surface card-surface-hover flex flex-col gap-3 p-6 sm:flex-row sm:items-start sm:justify-between"
+            >
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                  On-site article
+                </p>
+                <h3 className="mt-1 text-lg font-semibold text-fg">
+                  Terraform Best Practices: Managing Multi-Environment AWS Infrastructure
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                  State management, reusable modules, workspace patterns, and automated testing for
+                  production Terraform across dev, staging, and production.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-medium text-accent sm:self-center">
+                Read <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </span>
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <h2 className="mt-12 text-xl font-bold text-fg">External publications</h2>
+
+      <ul className="mt-6 space-y-4">
         {posts.map((post) => (
           <li key={post.href}>
             <a
@@ -141,8 +191,16 @@ export default function BlogPage() {
       </ul>
 
       <p className="mt-10 text-center text-sm text-fg-faint">
+        <Link href="/experience/" className="text-accent hover:text-accent-hover">
+          Experience
+        </Link>
+        {" · "}
+        <Link href="/projects/" className="text-accent hover:text-accent-hover">
+          Portfolio
+        </Link>
+        {" · "}
         <Link href="/" className="text-accent hover:text-accent-hover">
-          ← Home
+          Home
         </Link>
       </p>
     </div>

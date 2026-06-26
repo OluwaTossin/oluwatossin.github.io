@@ -3,9 +3,22 @@ import Link from "next/link";
 import { email, linkedin } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer",
   description:
-    "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer, SRE, DevSecOps, AWS and GCP.",
+    "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and platform engineering. Based in Chester, UK.",
+  alternates: { canonical: "/about/" },
+  openGraph: {
+    title: "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer",
+    description:
+      "Senior Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, DevSecOps, and platform engineering. Based in Chester, UK.",
+    url: "/about/",
+    type: "profile",
+  },
+  twitter: {
+    title: "About Oluwatosin Jegede — Senior Cloud & DevOps Engineer",
+    description:
+      "Senior Cloud & DevOps Engineer specialising in AWS, GCP, Terraform, Kubernetes, SRE, and DevSecOps.",
+  },
 };
 
 const capabilities = [
@@ -49,7 +62,9 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
         <div className="space-y-8">
-          <h1 className="text-4xl font-bold tracking-tight text-fg">About</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-fg">
+            About Oluwatosin Jegede
+          </h1>
           <p className="text-lg font-medium text-accent-muted">
             Senior Cloud &amp; DevOps Engineer · SRE &amp; observability · DevSecOps · Google Professional
             Cloud Architect · AWS Certified DevOps Engineer — Professional

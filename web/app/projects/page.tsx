@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "DevOps & cloud engineering portfolio: AWS EKS/Kubernetes, Terraform IaC, GitHub Actions CI/CD, AIOps incident response, ML pipelines, GCP Cloud Run, security assessments, PCI-DSS platform work, observability (Prometheus, Grafana, ELK), and disaster recovery—case studies by Oluwatosin Jegede.",
+  alternates: { canonical: "/projects/" },
+  openGraph: {
+    title: "Portfolio · DevOps & Cloud Engineering Case Studies",
+    description:
+      "Case studies across AWS EKS, Terraform, CI/CD, observability, DevSecOps, ML ops, and disaster recovery.",
+    url: "/projects/",
+  },
+  twitter: {
+    title: "Portfolio · DevOps & Cloud Engineering Case Studies",
+    description:
+      "Case studies across AWS EKS, Terraform, CI/CD, observability, DevSecOps, and platform engineering.",
+  },
 };
 
 export default function PortfolioPage() {

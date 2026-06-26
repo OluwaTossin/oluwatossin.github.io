@@ -103,6 +103,27 @@ export default function HomePage() {
             <p className="text-sm text-fg-faint">
               Based in Chester, UK · Open to remote and UK-wide roles
             </p>
+            <p className="text-sm text-fg-muted">
+              <Link href="/about/" className="text-accent hover:text-accent-hover">
+                About
+              </Link>
+              {" · "}
+              <Link href="/experience/" className="text-accent hover:text-accent-hover">
+                Experience
+              </Link>
+              {" · "}
+              <Link href="/blog/" className="text-accent hover:text-accent-hover">
+                Blog
+              </Link>
+              {" · "}
+              <Link href="/devops-engineer-london/" className="text-accent hover:text-accent-hover">
+                DevOps London
+              </Link>
+              {" · "}
+              <Link href="/devops-engineer-manchester/" className="text-accent hover:text-accent-hover">
+                DevOps Manchester
+              </Link>
+            </p>
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24">

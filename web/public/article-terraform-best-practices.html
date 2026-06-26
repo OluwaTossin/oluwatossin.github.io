@@ -23,11 +23,101 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-  
   <!-- Article-specific styles -->
   <style>
+    :root {
+      --bg: #f8fffe;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0d9488;
+      --accent-2: #0f766e;
+      --border: #e2e8f0;
+      --shadow: 0 4px 16px rgba(13, 148, 136, 0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #134e4a;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .navlinks a {
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .navlinks a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer .small {
+      font-size: 0.875rem;
+    }
+
     /* Remove sticky header for clean reading experience */
     header {
       position: static !important;
@@ -238,11 +328,11 @@
           Oluwatosin Jegede
         </div>
         <div class="navlinks">
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
-          <a href="about.html"><i class="fas fa-user"></i> About</a>
-          <a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a>
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <a href="/about/"><i class="fas fa-user"></i> About</a>
+          <a href="/experience/"><i class="fas fa-briefcase"></i> Experience</a>
           <a href="/projects/"><i class="fas fa-th"></i> Portfolio</a>
-          <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="/blog/"><i class="fas fa-blog"></i> Blog</a>
         </div>
       </nav>
     </div>
@@ -252,7 +342,7 @@
   <main class="container">
     <article class="article-page">
       <!-- Back to Blog -->
-      <a href="blog.html" class="back-to-blog">
+      <a href="/blog/" class="back-to-blog">
         <i class="fas fa-arrow-left"></i>
         Back to Blog
       </a>
@@ -448,14 +538,11 @@ jobs:
   <footer>
     <div class="container small">
       © 2026 Oluwatosin Jegede. Professional portfolio. 
-      <span aria-hidden="true">·</span> <a href="about.html">About</a>
+      <span aria-hidden="true">·</span> <a href="/about/">About</a>
       <span aria-hidden="true">·</span> <a href="/projects/">Portfolio</a>
       <span aria-hidden="true">·</span> <a href="/devops-engineer-london/">DevOps Engineer in London</a>
       <span aria-hidden="true">·</span> <a href="/devops-engineer-manchester/">AWS DevOps Engineer in Manchester</a>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="js/scripts.js"></script>
 </body>
 </html>

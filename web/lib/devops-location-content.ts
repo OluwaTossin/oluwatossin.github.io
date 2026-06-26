@@ -309,7 +309,7 @@ export const manchesterConfig: DevopsCityConfig = {
 };
 
 export function buildPersonJsonLd(config: DevopsCityConfig) {
-  const pageUrl = `${siteUrl}${config.path.slice(0, -1)}`;
+  const pageUrl = `${siteUrl}${config.path}`;
   return {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -328,7 +328,7 @@ export function buildPersonJsonLd(config: DevopsCityConfig) {
 }
 
 export function buildBreadcrumbJsonLd(config: DevopsCityConfig) {
-  const pageUrl = `${siteUrl}${config.path.slice(0, -1)}`;
+  const pageUrl = `${siteUrl}${config.path}`;
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Experience",
   description:
     "Senior DevOps & SRE and platform engineering: hybrid AWS/GCP, EKS, Istio, Terraform, GitHub Actions, Argo CD, SLI/SLOs, DevSecOps, PCI-DSS, GDPR, FinOps—Netsible, Sovereign fintech, Help.NGO advisory, Afren.ai, and independent multi-cloud delivery.",
+  alternates: { canonical: "/experience/" },
+  openGraph: {
+    title: "Experience · Senior DevOps & SRE Engineer",
+    description:
+      "Production AWS/GCP platforms, Kubernetes, Terraform, GitOps, SLI/SLOs, DevSecOps, and FinOps across Netsible, Sovereign, Help.NGO, Afren.ai, and independent consulting.",
+    url: "/experience/",
+    type: "profile",
+  },
+  twitter: {
+    title: "Experience · Senior DevOps & SRE Engineer",
+    description:
+      "Production AWS/GCP platforms, Kubernetes, Terraform, GitOps, SLI/SLOs, DevSecOps, and FinOps.",
+  },
 };
 
 type Role = {
