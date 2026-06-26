@@ -43,6 +43,7 @@ jobs:
           test -f web/out/devops-engineer-london.html
           test -f web/out/devops-engineer-manchester.html
           test -f web/out/resume.pdf
+          test -f web/out/google58532d9504641638.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
